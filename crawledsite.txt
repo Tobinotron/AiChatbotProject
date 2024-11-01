@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <title>Beirut: Steigende Opferzahl nach Angriff nahe Spital - news.ORF.at</title>
+
+   
+<link rel="preload" href="//orf.at/fonts/ORFUniversal/Variable/Web/WOFF2/ORFUniversalVF_W_WghtWdthOpsz.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="//orf.at/fonts/ORFUniversal/Variable/Web/WOFF2/ORFUniversalVF_Italic_W_WghtWdthOpsz.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="//orf.at/fonts/ORFUniversalSC/Variable/Web/WOFF2/ORFUniversalSCVF_W_WghtOpsz.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel='preload' href='https://data-d6e13c60e8.orf.at/iomm/latest/manager/base/es6/bundle.js' as='script' id='IOMmBundle' crossorigin>
+<link rel='preload' href='https://data-d6e13c60e8.orf.at/iomm/latest/bootstrap/loader.js' as='script' crossorigin>
+
+<link data-compressor="2346d576" rel="stylesheet" type="text/css" media="screen" title="CSS Stylesheet" href="https://orf.at/mojo.compressed/1_4_1/news//news/common-main.css?v=2024100907-512" />
+
+
+
+
+<link rel="shortcut icon" type="image/png" href="https://orf.at/mojo/1_4_1/storyserver//common/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" href="https://orf.at/mojo/1_4_1/storyserver//common/images/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="https://orf.at/mojo/1_4_1/storyserver//common/images/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://orf.at/mojo/1_4_1/storyserver//common/images/favicons/favicon-64x64.png" sizes="64x64">
+<link rel="icon" type="image/png" href="https://orf.at/mojo/1_4_1/storyserver//common/images/favicons/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="https://orf.at/mojo/1_4_1/storyserver//common/images/favicons/favicon-128x128.png" sizes="128x128">
+
+<link rel="apple-touch-icon" href="https://orf.at/mojo/1_4_1/storyserver//news/news/images/touch-icon-iphone.png"/>
+<link rel="apple-touch-icon" sizes="76x76" href="https://orf.at/mojo/1_4_1/storyserver//news/news/images/touch-icon-ipad.png"/>
+<link rel="apple-touch-icon" sizes="120x120" href="https://orf.at/mojo/1_4_1/storyserver//news/news/images/touch-icon-iphone-retina.png"/>
+<link rel="apple-touch-icon" sizes="152x152" href="https://orf.at/mojo/1_4_1/storyserver//news/news/images/touch-icon-ipad-retina.png"/>
+
+<meta name="application-name" content="news.ORF.at"/>
+<meta name="msapplication-TileColor" content="#5286c1"/>
+<meta name="msapplication-square70x70logo" content="https://orf.at/mojo/1_4_1/storyserver//common/msapplicationtiles/target.128x128.png"/>
+<meta name="msapplication-square150x150logo" content="https://orf.at/mojo/1_4_1/storyserver//common/msapplicationtiles/target.270x270.png"/>
+<meta name="msapplication-wide310x150logo" content="https://orf.at/mojo/1_4_1/storyserver//common/msapplicationtiles/target.558x270.png" />
+<meta name="msapplication-square310x310logo" content="https://orf.at/mojo/1_4_1/storyserver//common/msapplicationtiles/target.558x558.png" />
+
+<link rel="alternate" type="application/rss+xml" title="Newsfeed - news.ORF.at"  href="https://rss.orf.at/news.xml" />
+
+<meta name="robots" content="NOODP, NOYDIR" />
+<meta name="format-detection" content="telephone=no" />
+<meta property="fb:admins" content="100000441983612" />
+<meta property="og:site_name" content="news.ORF.at" />
+
+<script class="nav-array">
+[]
+</script>
+
+
+   
+
+
+<link data-compressor="8ac5873f" rel="stylesheet" type="text/css" media="screen" title="CSS Stylesheet" href="https://orf.at/mojo.compressed/1_4_1/news//news/main.css?v=2024100907-512" />
+
+
+
+<link data-compressor="477e9bc6" rel="stylesheet" type="text/css" media="print" title="CSS Stylesheet" href="https://orf.at/mojo.compressed/1_4_1/news//news/print.css?v=2024100907-512" />
+
+
+
+
+
+   <meta property="fb:pages" content="44902596242,182146851877,21376831257,128777999463,553577838028208,288557274619001,942501875773264,515825358469599,289927117783068,400364115907,313258915520789,182837171730931,60906181115,200860629933510,520950004584056,334716002301,285552701609091,121919051194808,46459228315,121729504518822,123113897719876,362938404507,816516858421696,260337754071787,1362329713795725,1475362469455962,175201152647641,92325259890,185820979606,1547131872186889,114647135227810,1636539530008234,1756299601255193,979161472222861" />
+
+
+
+   <link rel="canonical" href="https://orf.at/stories/3373543/">
+<meta name="twitter:title" content="Beirut: Steigende Opferzahl nach Angriff nahe Spital">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="dc.date" content="2024-10-22" />
+
+
+<meta property="og:title" content="Beirut: Steigende Opferzahl nach Angriff nahe Spital">
+<meta property="og:url" content="https://orf.at/stories/3373543/" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="de_DE" />
+<meta property="og:description" content="Bei einem israelischen Luftangriff in der Nähe des Rafik-Hariri-Spitals in Beirut sind nach Angaben des libanesischen Gesundheitsministeriums mindestens 13 Menschen getötet worden. Weitere 57 Menschen seien verletzt worden, teilte das Ministerium weiter mit. Zuvor war von mindestens vier Toten die Rede – die Opferzahl hat sich damit deutlich erhöht. Israelischen Angaben zufolge galt der Angriff nahe dem größten Krankenhaus der libanesischen Hauptstadt einer „terroristischen Einrichtung der Hisbollah“."/>
+<meta property="og:image" content="https://ibs.orf.at/news?image=https%3A%2F%2Fassets.orf.at%2Fmims%2F2024%2F43%2F98%2Fcrops%2Fw%3D1200%2Ch%3D630%2Cq%3D75%2F2395319_master_915398_nahost_beirut_hariri_spital_r.jpg%3Fs%3D9d8d14098b8f88c56aaa6ca1c3aeedfa5aa1fceb" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="627" />
+<meta property="og:image:type" content="image/jpeg" />
+
+<meta name="description" content="Bei einem israelischen Luftangriff in der Nähe des Rafik-Hariri-Spitals in Beirut sind nach Angaben des libanesischen Gesundheitsministeriums mindestens 13 Menschen getötet worden. Weitere 57 Menschen seien verletzt worden, teilte das Ministerium weiter mit. Zuvor war von mindestens vier Toten die Rede – die Opferzahl hat sich damit deutlich erhöht. Israelischen Angaben zufolge galt der Angriff nahe dem größten Krankenhaus der libanesischen Hauptstadt einer „terroristischen Einrichtung der Hisbollah“."/>
+<meta name="twitter:description" content="Bei einem israelischen Luftangriff in der Nähe des Rafik-Hariri-Spitals in Beirut sind nach Angaben des libanesischen Gesundheitsministeriums mindestens 13 Menschen getötet worden. Weitere 57 Menschen seien verletzt worden, teilte das Ministerium weiter mit. Zuvor war von mindestens vier Toten die Rede – die Opferzahl hat sich damit deutlich erhöht. Israelischen Angaben zufolge galt der Angriff nahe dem größten Krankenhaus der libanesischen Hauptstadt einer „terroristischen Einrichtung der Hisbollah“."/>
+<script type="application/ld+json">
+{
+   "@context": "http://schema.org",
+   "@type": "NewsArticle",
+   "author": {
+      "@type": "Organization",
+      "name": "ORF.at",
+      "url": "https://orf.at"
+   },
+   "publisher": {
+      "@type": "Organization",
+      "name": "ORF.at",
+      "url":"https://orf.at",
+      "sameAs":["https://news.orf.at","https://www.orf.at","https://sport.orf.at"],
+      "logo": {
+         "@type": "ImageObject",
+         "url": "https://orf.at/mojo/1_4_1/storyserver//news/news/images/touch-icon-ipad-retina.png"
+      }
+   },
+   "mainEntityOfPage": "https://orf.at/stories/3373543/",
+   "headline": "Beirut: Steigende Opferzahl nach Angriff nahe Spital",
+   "description": "Bei einem israelischen Luftangriff in der Nähe des Rafik-Hariri-Spitals in Beirut sind nach Angaben des libanesischen Gesundheitsministeriums mindestens 13 Menschen getötet worden. Weitere 57 Menschen seien verletzt worden, teilte das Ministerium weiter mit. Zuvor war von mindestens vier Toten die Rede – die Opferzahl hat sich damit deutlich erhöht. Israelischen Angaben zufolge galt der Angriff nahe dem größten Krankenhaus der libanesischen Hauptstadt einer „terroristischen Einrichtung der Hisbollah“.",
+   "image": {
+      "@type": "ImageObject",
+      "url": "https://ibs.orf.at/news?image=https%3A%2F%2Fassets.orf.at%2Fmims%2F2024%2F43%2F98%2Fcrops%2Fw%3D1200%2Ch%3D627%2Cq%3D75%2F2395319_master_915398_nahost_beirut_hariri_spital_r.jpg%3Fs%3D238fc854ad64360e0bb0addc5a47dd1689b4466f",
+      "height": "627",
+      "width": "1200"
+   },
+   "dateModified": "2024-10-22T11:54:45.000Z",
+   "datePublished": "2024-10-22T10:11:50.024Z"
+}
+</script>
+
+
+
+
+</head>
+<body class="ss news orfon-margin-responsive" id="top">
+
+   <nav id="skiplinks" aria-label="Sprungmarken">
+   <a accesskey="1" href="#ss-storyWrapper">Zum Inhalt [AK+1]</a><span class="sr-only"> / </span>
+   <a accesskey="3" href="#ss-networkNavigation">Zur ORF.at-Navigation [AK+3]</a>
+</nav>
+
+
+
+
+   <div class="wrapper">
+      <header class="header">
+   <nav aria-label="ORF.at Navigation">
+   <ul id="ss-networkNavigation" class="network-navigation" tabindex="-1">
+      <li><a href="https://tv.orf.at/">Fernsehen</a></li>
+      <li><a href="https://on.orf.at/">ORF ON</a></li>
+      <li><a href="https://sound.orf.at/">Sound</a></li>
+      <li><a href="https://topos.orf.at/">Topos</a></li>
+      <li><a href="https://debatte.orf.at/">Debatte</a></li>
+      <li><a href="https://oesterreich.orf.at/" class="networkOesterreich">&Ouml;sterreich</a></li>
+      <li><a href="https://wetter.orf.at/">Wetter</a></li>
+      <li><a href="https://sport.orf.at/">Sport</a></li>
+      <li><a href="https://orf.at/" lang="en" class="current">News</a></li>
+      <li id="sitemap-menu" class="network-navigation-sitemap">
+         <a href="https://orf.at/uebersicht" id="sitemap-button" role="button" aria-controls="sitemap" aria-haspopup="true">ORF.at im &Uuml;berblick</a>
+         <div id="sitemap" class="network-navigation-sitemap-content" aria-labelledby="sitemap-button"></div>
+      </li>
+   </ul>
+</nav>
+
+
+   <div class="top-area-wrapper">
+      <div class="logo-area">
+         <a class="site-logo" href="https://orf.at/" aria-label="zur ORF.at-Startseite">
+            news
+         </a>
+         <a href="https://orf.at/" aria-hidden="true" tabindex="0">
+            <img src="https://orf.at/mojo/1_4_1/storyserver//news/news/images/target_news-universal.svg" width="103" height="39" alt="ORF.at" title="" class="orfon-target-logo">
+         </a>
+      </div>
+      <div class="widget-area">
+         
+      </div>
+      <div class="flag-area">
+         
+
+      </div>
+      <nav class="drawer-navigation">
+         <button class="drawer-button" aria-expanded="false" aria-controls="drawer-wrapper">
+   <span class="sr-only">Navigation</span>
+   <span class="drawer-button-image"></span>
+</button>
+
+
+
+         <div class="drawer-wrapper" id="drawer-wrapper" aria-hidden="true">
+   <div class="drawer-content">
+      
+      
+
+      
+      <ul class="drawer-network-navigation">
+         <li><a href="https://orf.at/">News</a></li>
+         <li><a href="https://sport.orf.at/">Sport</a></li>
+         <li><a href="https://wetter.orf.at/m/">Wetter</a></li>
+         <li><a href="https://oesterreich.orf.at/m/">&Ouml;sterreich</a></li>
+         <li><a href="https://debatte.orf.at">Debatte</a></li>
+         <li><a href="https://sound.orf.at">Sound</a></li>
+ 	 <li><a href="https://topos.orf.at/">Topos</a></li>
+         <li><a href="https://on.orf.at/">ORF ON</a></li>
+         <li><a href="https://tv.orf.at/">Fernsehen</a></li>
+         <li><a href="https://orf.at/uebersicht/">Alle ORF Angebote</a></li>
+      </ul>
+   </div>
+</div>
+
+
+      </nav>
+   </div>
+</header>
+<div class="drawer-dimmer"></div>
+
+<div
+    class="vue-oon-product-navigation"
+    data-level="two"
+    data-back-button-href='https://orf.at/'
+    
+
+
+></div>
+
+
+      <main class="content contentpage" id="content" tabindex="-1">
+         <div tabindex="-1" id="ss-storyWrapper" class="story-wrapper story-type-story story-opener-exists">
+      <figure class="image opener">
+      <picture>
+         <source media="(min-width: 601px)" width="4982" height="1993"
+            srcset="https://assets.orf.at/mims/2024/43/98/crops/w=640,h=256,q=70,r=2/2395324_opener_915398_nahost_beirut_hariri_spital_r.jpg?s=2144080955b4fd0f52b8d10ff8a5bf4362522673 2x, https://assets.orf.at/mims/2024/43/98/crops/w=640,h=256,q=60,r=3/2395324_opener_915398_nahost_beirut_hariri_spital_r.jpg?s=ca7a6894b50c9458819be446c651ade585590d1e 3x"
+         />
+         <source media="(max-width: 600px)" width="640" height="360"
+            srcset="https://assets.orf.at/mims/2024/43/98/crops/w=800,h=450,q=70/2395319_master_915398_nahost_beirut_hariri_spital_r.jpg?s=2e4f6508514cbb0d24091f026b3596805212773d 800w, https://assets.orf.at/mims/2024/43/98/crops/w=1280,h=720,q=60/2395319_master_915398_nahost_beirut_hariri_spital_r.jpg?s=6feb8661701bf2f69fade1b284c78d6f6eea58a5 1280w"
+         />
+         <img
+            srcset="https://assets.orf.at/mims/2024/43/98/crops/w=875,q=90/2395324_opener_915398_nahost_beirut_hariri_spital_r.jpg?s=2c1fd21527a35f8974552b8f18d4d2f4edf26187"
+            alt="Menschen suchen in Trümmern nahe dem Rafik Hariri University Hospital"
+            width="4982"
+            height="1993"
+         />
+      </picture>
+      <footer class="credit" aria-hidden="true">
+          <span class="copyright" title="Reuters/Yara Nardi">
+   Reuters/Yara Nardi
+</span>
+
+
+
+      </footer>
+   </figure>
+
+
+   
+
+   <div id="ss-shunter" class="shunter">
+      <div class="story-lead">
+         <div class="keyword">Beirut</div>
+
+
+
+
+         <h1 class="story-lead-headline">Steigende Opferzahl nach Angriff nahe Spital</h1>
+         <p class="story-lead-text"><strong>
+            Bei einem israelischen Luftangriff in der Nähe des Rafik-Hariri-Spitals in Beirut sind nach Angaben des libanesischen Gesundheitsministeriums mindestens 13 Menschen getötet worden. Weitere 57 Menschen seien verletzt worden, teilte das Ministerium weiter mit. Zuvor war von mindestens vier Toten die Rede – die Opferzahl hat sich damit deutlich erhöht. Israelischen Angaben zufolge galt der Angriff nahe dem größten Krankenhaus der libanesischen Hauptstadt einer „terroristischen Einrichtung der Hisbollah“.
+         </strong></p>
+         <div class="story-meta">
+   <div class="story-meta-dates " >
+      <div class="print-only" aria-hidden="true">
+         22.10.2024 12.11
+      </div>
+      <div class="screen-only">
+         Online seit heute, 12.11 Uhr
+
+<span class="update-ts">
+   (Update: 13.54 Uhr)
+</span>
+
+
+
+
+
+         
+      </div>
+   </div>
+   <div class="vue-oon-share-widget" data-url="https://orf.at/stories/3373543/">
+</div>
+
+
+
+</div>
+
+
+      </div>
+      <div id="ss-storyContent" class="story-content">
+         
+
+         <div class="story-banner story-horizontal-ad"></div>
+
+
+
+         <div class="story-story">
+            <p>Israel hatte am Vortag die Angriffe gegen die vom Iran unterstützte schiititische Hisbollah-Miliz deutlich verstärkt. CNN-Angaben zufolge habe der Angriff nahe dem Rafik-Hariri-Krankenhaus in einem Gebiet stattgefunden, für das es zuvor keine Evakuierungsanweisung des israelischen Militärs gegeben habe.</p><p>Im Fokus der jüngsten Angriffe standen zuletzt südliche Vororte von Beirut. Bei den Angriffen seien nach Angaben der israelischen Streitkräfte (IDF) Waffenlager und Kommandozentren der Hisbollah angegriffen worden.</p><p>Im Visier eines Luftangriffs stand den Angaben zufolge auch ein Hisbollah-Marinestützpunkt. Es hätten sich dort unter anderem Schnellboote und ein Trainingszentrum befunden, teilte die Armee mit. Die Schnellboote sollten für Angriffe auf israelische Marineboote sowie strategische Ziele in israelischen Gewässern verwendet werden, hieß es weiter.</p><h2>Israelische Armee: 230 „terroristische Ziele“ angegriffen</h2><p>Im Laufe des vergangenen Tages hätten die israelischen Luftstreitkräfte rund 230 „terroristische Ziele“ der Hisbollah im Libanon sowie der mit ihr verbündeten islamistischen Hamas im Gazastreifen angegriffen, teilte die Armee Dienstagfrüh mit.</p>   <section class="stripe  ">
+      <div class="stripe-video-wrapper">
+         <div class="video tvthek" data-tvthek-segment="ODc4M2hqZDcyOTNrbWQxNTc0NDIzOA=="
+     data-tvthek-jump-mark="0"
+     data-loadingmessage="Video wird geladen&hellip;"
+     data-title="Luftangriffe auf Beirut"
+     data-disable-ads="true"
+     data-adworx-ressort="aus"
+     data-errormessage="Dieses Video ist nicht mehr verf&uuml;gbar"></div>
+
+      </div>
+      
+      <div class="stripe-text-wrapper"><h2>Luftangriffe auf Beirut</h2><p>Israel hat südliche Vororte der libanesischen Hauptstadt Beirut beschossen.</p></div>
+   </section>
+<p>Unmittelbar nach Evakuierungsaufrufen der israelischen Armee an Bewohner und Bewohnerinnen war am Montagabend laut einem Agenturbericht erstmals auch das Stadtviertel Usai Ziel israelischer Angriffe.</p><h2>Geldbunker unter Spital vermutet</h2><p>Im Vorort Dahija wurde einem Medienbericht zufolge ein Spital geräumt, nachdem Israel die Hisbollah-Miliz beschuldigt hatte, unter dem Gebäude Bargeld und Gold im Wert von mehreren hundert Millionen Dollar zu bunkern.</p><p>Der Ende September getötete Hisbollah-Chef Hassan Nasrallah habe den Bunker bauen lassen, so Israels Armeesprecher Daniel Hagari. Die Anlage unter dem Spital sei den israelischen Angaben zufolge für längere Aufenthalte ausgelegt. „Nach unseren Schätzungen lagert in diesem Bunker mindestens eine halbe Milliarde Dollar (rund 460 Mio. Euro, Anm.) in Scheinen und Gold“, so Hagari.</p><p>„Ich appelliere an die libanesische Regierung, die libanesischen Behörden und die internationalen Organisationen: Erlauben Sie der Hisbollah nicht, das Geld für Terror und Angriffe auf Israel zu verwenden!“, sagte Hagari weiter. Das Militär werde das Krankenhaus selbst nicht angreifen, kündigte Hagari an. Die israelischen Luftstreitkräfte überwachten jedoch das Gelände. Nach Angaben des britischen „Guardian“ wurde das Spital nach Bekanntwerden der israelischen Vorwürfe geräumt.</p><aside class="linkcard">
+   <a href="https://debatte.orf.at/stories/1834428/">
+      <picture>
+         
+<source media="(max-width: 590px)"
+   srcset="https://assets.orf.at/mims/2024/40/17/crops/w=640,h=448,q=90,r=2/2370873_master_905217_nahost_wie_eskalation_verhindern_ap.jpg?s=435687230d916f2ea8fb3665574aa36158d08453 2x, https://assets.orf.at/mims/2024/40/17/crops/w=640,h=448,q=75,r=3/2370873_master_905217_nahost_wie_eskalation_verhindern_ap.jpg?s=cdffd63f46396a3b0a329b415842a9641331b14c 3x"
+/>
+
+
+         <img class="lazy-loading"
+      src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%208640%205760'%2F%3E"
+      data-src="https://assets.orf.at/mims/2024/40/17/crops/w=259,h=146,q=90,r=2/2370873_master_905217_nahost_wie_eskalation_verhindern_ap.jpg?s=e1d1f1d372d7d5906401c9e1c3d61bdf250a09f4"
+      data-srcset="https://assets.orf.at/mims/2024/40/17/crops/w=259,h=146,q=90,r=2/2370873_master_905217_nahost_wie_eskalation_verhindern_ap.jpg?s=e1d1f1d372d7d5906401c9e1c3d61bdf250a09f4 2x, https://assets.orf.at/mims/2024/40/17/crops/w=259,h=146,q=75,r=3/2370873_master_905217_nahost_wie_eskalation_verhindern_ap.jpg?s=227cbe0c9a0e5ddf2426737f41f2c20263934269 3x"
+      alt="Eine Frau mit Koran vor einem zerstörten Gebäude in Beirut (Libanon)"
+      title="AP/Hassan Ammar" />
+
+
+      </picture>
+      <div class="linkcard-texts">
+         <div class="linkcard-flag">Debatte</div>
+         <h3 class="linkcard-title">Nahost: Wie weitere Eskalation verhindern?</h3>
+      </div>
+   </a>
+</aside>
+
+<h2>Spitalsdirektor weist Vorwürfe zurück</h2><p>Fadi Alama, Direktor des Krankenhauses al-Sahel, unter dem sich den israelischen Angaben nach der Bunker befinden soll, wies das gegenüber Reuters als falsch zurück. Die Klinik habe keinerlei Verbindungen zu politischen Parteien, so Alama, der gleichzeitig die libanesische Armee aufforderte, das Krankenhaus zu durchsuchen, um zu zeigen, dass es nur Operationssäle, Patienten und eine Leichenhalle gebe.</p><h2>Vorwürfe gegen Türkei</h2><p>Im Visier der israelischen Armee sind seit der Nacht auf Montag auch Zweigstellen der Finanzinstitution al-Kard al-Hassan, einer Art Bank der Hisbollah. Nach Angaben des US-Finanzministeriums wird al-Kard al-Hassan von der Hisbollah als Deckmantel benutzt, um finanzielle Aktivitäten zu verschleiern und Zugang zum internationalen Finanzsystem zu erhalten.</p><p>Der Hisbollah solle keine Gelegenheit gegeben werden, sich neu zu formieren, betonte Israels Armee. Die beiden wichtigsten Einnahmequellen für ihre terroristischen Aktivitäten seien direkte Zuwendungen des Iran in Form von Bargeld und Gold sowie die Menschen des Libanon, sagte Hagari. Diesen würden durch al-Kard al-Hassan Finanzdienstleistungen angeboten.</p><p>Indem der Iran weiterhin US-Dollar in den Libanon schmuggle, werde die Landeswährung abgewertet und die ohnehin schon schwere Wirtschaftskrise im Land weiter verschärft. Hagari warf der Hisbollah außerdem vor, sich zusätzlich über Unternehmen in der Türkei sowie in Syrien, im Jemen und im Libanon zu finanzieren. Um welche Unternehmen es sich im NATO-Land Türkei handle, sagte der israelische Armeesprecher nicht.</p><h2>Hisbollah reklamiert Angriff auf Netanjahu-Haus für sich</h2><p>Die Hisbollah erklärte ihrerseits am Montagabend, dass sie eine Raketensalve auf eine Geheimdienstbasis der Armee in einem Vorort der israelischen Hauptstadt Tel Aviv abgefeuert habe. Nach Angaben des israelischen Militärs feuerte die Hisbollah bis 23.00 Uhr etwa 170 Geschoße aus dem Libanon auf Israel ab. Im Zentrum der israelischen Küstenstadt Tel Aviv gab es Dienstagfrüh erneut Luftalarm.</p><p>Die Hisbollah reklamierte am Dienstag zudem einen Drohnenangriff auf das Haus von Israels Premier Benjamin Netanjahu am Wochenende für sich. Die Miliz erkläre ihre „volle, vollständige und ausschließliche Verantwortung“ für die Aktion in der Stadt Caesarea, sagte Hisbollah-Sprecher Mohammed Afif. Netanjahu bezeichnete den Drohnenangriff als Attentatsversuch und drohte mit Vergeltung.</p><p>Nach dem Großangriff der Hamas auf Israel am 7. Oktober 2023 und dem dadurch ausgelösten Krieg im Gazastreifen hatte die mit der Hamas und dem Iran verbündete Hisbollah-Miliz mit permanenten Raketenangriffen auf den Norden Israels eine zweite Front eröffnet.</p><h2>Laufende Bodenoffensive</h2><p>Seit rund drei Wochen operiert Israel auch mit Bodentruppen im Süden des Libanon. Laut Medienberichten von Dienstag erwägt Israel den Abzug seiner Soldaten aus dem Libanon binnen einiger Wochen. Ein Truppenabzug müsse aus Sicht der israelischen Armee jedoch von einer politischen Vereinbarung flankiert werden, berichteten israelische Medien übereinstimmend. Dann sei auch eine baldige Rückkehr der Einwohnerinnen und Einwohner Nordisraels in ihre Wohnorte möglich.</p><p>Den Berichten zufolge sind im Süden des Libanon derzeit mindestens vier israelische Divisionen im Einsatz. Sie sind vor allem in Grenznähe aktiv. Israel nennt keine Truppenstärken, eine Division umfasst jedoch für gewöhnlich mehrere tausend Soldaten. In den Gegenden nördlich der Grenze sei die Hisbollah weitgehend geschlagen, hieß es in den Berichten. Die proiranische Miliz habe allerdings immer noch die Fähigkeit, Israel mit Raketen und Drohnen anzugreifen.</p><p>Die israelische Zeitung „Jediot Achronot“ berichtete, Israels Nordkommando arbeite an einem Plan für die Sicherung der Nordgrenze nach einem Ende des Krieges. Teil davon sei eine fortwährende technologische Überwachung des Grenzgebiets, um sicherzustellen, dass die Hisbollah ihre Fähigkeiten nicht wieder aufbauen könne.</p>
+         </div>
+         <div class="story-footer">
+            <div class="byline"><p>pepr, ORF.at/<a href="https://orf.at/stories/impressum-nachrichtenagenturen/">Agenturen</a></p></div>
+
+
+            
+
+
+            <h2>Links:</h2><ul><li><a href="https://www.idf.il/en/" rel="noopener noreferrer">Israelische Armee</a> (engl.)</li><li><a href="https://www.gov.il/en" rel="noopener noreferrer">Israelisches Regierungsportal</a></li><li><a href="http://www.pcm.gov.lb/" rel="noopener noreferrer">Libanesische Regierung</a></li><li><a href="https://www.theguardian.com/world/2024/oct/21/israel-claims-hezbollah-bunker-under-beirut-hospital-holds-millions-in-cash" rel="noopener noreferrer">„Guardian“-Artikel</a></li><li><a href="https://edition.cnn.com/world/live-news/israel-iran-lebanon-gaza-war-10-22-24-intl-hnk/index.html" rel="noopener noreferrer">CNN-Artikel</a></li></ul>
+
+
+         </div>
+      </div>
+      <div id="more-to-read-anchor" class="more-to-read-anchor"></div>
+   </div>
+</div>
+
+<aside id="more-to-read" class="more-to-read fixed loading">
+   <button
+      id="more-to-read-arrow-left"
+      class="more-to-read-arrow left"
+      title="Zurück"
+      aria-hidden="true"
+      tabindex="-1"
+   >
+      <span class="arrow"></span>
+   </button>
+   <div class="scrollable-pane" id="more-to-read-container"></div>
+   <button
+      id="more-to-read-arrow-right"
+      class="more-to-read-arrow right"
+      title="Vor"
+      aria-hidden="true"
+      tabindex="-1"
+   >
+      <span class="arrow"></span>
+   </button>
+   <script type="application/json" id="more-to-read-data">
+  {
+     "site": "ORF.at",
+     "excludeStoryId": 3373543,
+     "excludeHref": "https://orf.at/stories/3373543/",
+     "grid": "https://orf.at/grids/news/linkcards.json",
+     "items": [{"crop":{"srcTemplate":"https://assets.orf.at/mims/2024/40/17/crops/{params*}/2370873_master_905217_nahost_wie_eskalation_verhindern_ap.jpg","copyright":"AP/Hassan Ammar","alttext":"Eine Frau mit Koran vor einem zerstörten Gebäude in Beirut (Libanon)","sourceUrl":null,"license":null,"src":"https://assets.orf.at/mims/2024/40/17/crops/w=259,h=146,q=90,r=2/2370873_master_905217_nahost_wie_eskalation_verhindern_ap.jpg?s=e1d1f1d372d7d5906401c9e1c3d61bdf250a09f4","srcSet":"https://assets.orf.at/mims/2024/40/17/crops/w=259,h=146,q=90,r=2/2370873_master_905217_nahost_wie_eskalation_verhindern_ap.jpg?s=e1d1f1d372d7d5906401c9e1c3d61bdf250a09f4 2x, https://assets.orf.at/mims/2024/40/17/crops/w=259,h=146,q=75,r=3/2370873_master_905217_nahost_wie_eskalation_verhindern_ap.jpg?s=227cbe0c9a0e5ddf2426737f41f2c20263934269 3x"},"link":{"href":"https://debatte.orf.at/stories/1834428/","siteAlias":null},"title":"Nahost: Wie weitere Eskalation verhindern?","flag":"Debatte","site":"news"},{"crop":{"srcTemplate":"https://assets.orf.at/mims/2024/43/54/crops/{params*}/2394713_master_915154_nahost_nordgaza_unrwa_body_essen_r.jpg","copyright":"Reuters/Mahmoud Issa","alttext":"Essensausteilung in Nordgaza","sourceUrl":null,"license":null,"src":"https://assets.orf.at/mims/2024/43/54/crops/w=259,h=146,q=90,r=2/2394713_master_915154_nahost_nordgaza_unrwa_body_essen_r.jpg?s=aa61de3208e102b50cc221f10fc6a9a6ba0352db","srcSet":"https://assets.orf.at/mims/2024/43/54/crops/w=259,h=146,q=90,r=2/2394713_master_915154_nahost_nordgaza_unrwa_body_essen_r.jpg?s=aa61de3208e102b50cc221f10fc6a9a6ba0352db 2x, https://assets.orf.at/mims/2024/43/54/crops/w=259,h=146,q=75,r=3/2394713_master_915154_nahost_nordgaza_unrwa_body_essen_r.jpg?s=949b3f603145b15801a8aef5691a2c1b743410b0 3x"},"link":{"href":"https://orf.at/stories/3373471/","siteAlias":"news"},"storyId":3373471,"title":"UNRWA wegen Lage in Nordgaza alarmiert","flag":null,"site":"news"}]
+  }
+</script>
+
+
+</aside>
+
+
+
+
+
+
+
+      </main>
+      <footer class="page-footer" id="page-footer">
+   <div class="back-to-front" >
+      <a href="https://orf.at/">Zurück zur Startseite</a>
+   </div>
+   <ul class="footer-network">
+   <li><a href="https://orf.at/" lang="en">News</a></li>
+   <li><a href="https://sport.orf.at/" class="current">Sport</a></li>
+   <li><a href="https://wetter.orf.at/">Wetter</a></li>
+   <li><a href="https://oesterreich.orf.at/" class="networkOesterreich">&Ouml;sterreich</a></li>
+   <li><a href="https://debatte.orf.at/">Debatte</a></li>
+   <li><a href="https://sound.orf.at/">Sound</a></li>
+   <li><a href="https://topos.orf.at/">Topos</a></li>
+   <li><a href="https://on.orf.at/">ORF ON</a></li>
+   <li><a href="https://tv.orf.at/">Fernsehen</a></li>
+   <li><a href="https://radio.orf.at/">Radio</a></li>
+   <li><a href="https://orf.at/uebersicht/">Alle ORF-Angebote</a></li>
+</ul>
+
+
+
+   <ul class="footer-service">
+      <li><a href="https://der.orf.at/kontakt">Kontakt</a></li>
+      <li><a href="https://orf.at/stories/datenschutz">Datenschutzerkl&auml;rung</a></li>
+      <li><a href="#" id="show-didomi">Datenschutzeinstellungen</a></li>
+      <li><a href="https://orf.at/stories/impressum/">Offenlegung</span></a></li>
+      <li><a href="https://zukunft.orf.at/show_content2.php?s2id=183">Bekanntgabe laut ORF-G</a></li>
+      <li><a href="https://publikumsrat.orf.at/">Publikumsrat</a></li>
+      <li><img class="orf-brick" src="https://orf.at/mojo/1_4_1/storyserver//news/common/images/orf-brick.svg" alt="ORF-Logo"></li>
+   </ul>
+   <span class="footer-font-preloader" aria-hidden="true" style="font-size: 6px;">ORF.at</span>
+</footer>
+
+
+      <div class="print-warning">
+   <div>Nicht alle Bilder konnten vollständig geladen werden. Bitte schließen Sie die Druckvorschau bis alle Bilder geladen wurden und versuchen Sie es noch einmal.</div>
+</div>
+
+
+
+   </div>
+   
+<script>
+   window.settings = {
+      "sitemap": {
+         "url": "https://orf.at/mojo/1_4_1/storyserver//common/sitemap/sitemap-standard.json"
+      },
+      "tickerBanner" : {
+         "enabled": true,
+         "url": "https://orf.at/mojo/1_4_1/storyserver//news/news/html/banner.html?v=1.3",
+         "width": 300,
+         "height": 600
+      },
+      "vote": {
+         "pluginSrc": ""
+      },
+      "siteHref": "https://orf.at/",
+      "mobilityLayer": {
+         "fussballApi": "https://appfeeds.orf.at/fb2.1/api/",
+         "fussballWeb": "https://sport.orf.at/fussball/"
+      },
+      "mediaApi": "//bits.orf.at/filehandler/static-api/json/current/data.json"
+   };
+   </script>
+
+<script data-compressor="57bff58c" src="https://orf.at/mojo.compressed/1_4_1/news//news/main.js?v=2024100907-512"></script>
+
+
+
+<script defer="defer" src="https://assets.orf.at/vue-storyserver/product-navigation/js/app.js?v=2024100907-512"></script>
+<script defer="defer" src="https://assets.orf.at/vue-storyserver/bulawindow-2023/js/app.js?v=2024100907-512"></script>
+<script defer="defer" src="https://assets.orf.at/vue-storyserver/einfache-sprache-2023/js/app.js?v=2024100907-512"></script>
+<script type="module" src="https://assets.orf.at/vue-storyserver/newssport-videos/index.js?v=2024100907-512&topVideoCount=5&newsOverviewCount=19"></script>
+<script defer="defer" src="https://assets.orf.at/vue-storyserver/share/js/app.js?v=2024100907-512"></script>
+
+
+
+<script data-compressor="5d0bb7c3" src="https://orf.at/mojo.compressed/1_4_1/news//news/push-register-fix.js?v=2024100907-512" defer></script>
+
+
+
+
+   <script type="module" src="https://orf.at/oon/media/8.3/oonmedia.js"></script>
+   <script defer src="https://pipe.orf.at/globus-2022/code/main.js?v=2024100907-512"></script>
+   <script defer="defer" src="//pipe.orf.at/migsys/mig.js/injector.js?automojo&v=2024100907-512"></script>
+
+   
+
+   
+   <!-- OEWA -->
+<script>
+var oewa_path = "RedCont/Politik/PolitikAusland/v1news/stories/grid";
+var oewa_unique = "3373543";
+var oewa_postdate = new Date(1729591910024);
+var oewa_delta = 7 * 86400000;
+if (isNaN(parseInt(oewa_unique)) === false && (new Date() - oewa_postdate) > oewa_delta) {
+   oewa_unique = "fulltext";
+}
+var oewa_data = {
+  "cn": "at",
+  "st": "at_w_atorf",
+  "sv": "in",
+  "ps": "lin",
+  "sc": "yes"
+};
+oewa_data.cp = oewa_path + "/" + oewa_unique;
+if (window.oewa_init) {
+   window.oewa_init(oewa_data);
+}
+if (window.oewa_consentless_init) {
+   window.oewa_consentless_init(oewa_data);
+}
+</script>
+<!-- /OEWA -->
+
+
+</body>
+</html>
+
