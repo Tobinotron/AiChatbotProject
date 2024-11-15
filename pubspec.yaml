@@ -12,6 +12,7 @@ dependencies:
   http: ^0.13.4
   html: ^0.15.0
   text_analysis: ^1.0.0+2
+  shared_preferences: ^2.0.15
 
 dev_dependencies:
   flutter_test:
