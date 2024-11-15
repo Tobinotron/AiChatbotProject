@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:webcrawler/list_compare.dart' as list_compare;
 import 'dart:convert';
@@ -5,6 +7,10 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'package:webcrawler/database.dart' as database;
 import 'package:webcrawler/prompt_generator.dart' as prompt_gen;
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:path_provider/path_provider.dart';
+
+List<String> chatNames = ["Person 1", "Person 2"];
+List<Map<String, String>> messages = [];
 
 void main() {
   runApp(MyApp());
@@ -25,8 +31,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  // Placeholder chat names (for display purposes only)
-  List<String> chatNames = ["Placeholder Chat 1", "Placeholder Chat 2"];
 
   @override
   Widget build(BuildContext context) {
@@ -259,9 +263,66 @@ class _WhatsAppChatState extends State<WhatsAppChat> {
         setState(() {
           messages.add({'sender': 'bot', 'message': response});
         });
+        saveMessages(widget.chatName, messages);
       });
     }
   }
+
+  @override
+  void initState() {
+    super.initState();
+    // Load messages when the widget is initialized
+    _loadMessages();
+  }
+
+// Function to load messages for the current chat
+  Future<void> _loadMessages() async {
+    List<Map<String, String>> loadedMessages = await loadMessages(widget.chatName);
+    setState(() {
+      messages = loadedMessages;
+    });
+  }
+
+  // Get the directory to store the JSON files
+Future<Directory> _getAppDocumentsDirectory() async {
+  return await getApplicationDocumentsDirectory();
+}
+
+// Get the file path based on chatName
+Future<File> _getChatFile(String chatName) async {
+  final dir = await _getAppDocumentsDirectory();
+  return File('${dir.path}/$chatName.json');
+}
+
+// Save the messages to a JSON file
+Future<void> saveMessages(String chatName, List<Map<String, String>> messages) async {
+  final file = await _getChatFile(chatName);
+  final jsonString = jsonEncode(messages);
+  await file.writeAsString(jsonString);
+}
+
+// Load messages from a JSON file, or create an empty file if it doesn't exist
+Future<List<Map<String, String>>> loadMessages(String chatName) async {
+  try {
+    final file = await _getChatFile(chatName);
+
+    if (await file.exists()) {
+      final jsonString = await file.readAsString();
+      List<dynamic> jsonData = jsonDecode(jsonString);
+      // Convert dynamic list to List<Map<String, String>>
+      return List<Map<String, String>>.from(jsonData.map((item) => Map<String, String>.from(item)));
+    } else {
+      // If the file doesn't exist, create it with an empty list
+      await file.writeAsString(jsonEncode([]));
+      return [];
+    }
+  } catch (e) {
+    // Handle any errors, and return an empty list if something goes wrong
+    print('Error loading messages: $e');
+    return [];
+  }
+}
+
 
   // Method to load JSON data
   Future<void> initializeDatabase() async {
