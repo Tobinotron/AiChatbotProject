@@ -3,7 +3,7 @@ import 'package:html/parser.dart' show parse;
 import 'package:html/dom.dart';
 import 'dart:collection';
 
-import 'package:webcrawler/database.dart' as database;
+import 'package:webcrawler/helpers/database.dart' as database;
 
 Set<String> visitedUrls = {}; // Set zum Speichern der besuchten URLs
 Queue<String> urlQueue = Queue(); // Warteschlange für URLs

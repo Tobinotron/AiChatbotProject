@@ -4,11 +4,10 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:flutter/services.dart' show rootBundle;
-import 'package:webcrawler/home_page.dart';
 import 'settings_drawer.dart';
-import 'package:webcrawler/list_compare.dart' as list_compare;
-import 'package:webcrawler/prompt_generator.dart' as prompt_gen;
-import 'package:webcrawler/database.dart' as database;
+import 'package:webcrawler/helpers/list_compare.dart' as list_compare;
+import 'package:webcrawler/helpers/prompt_generator.dart' as prompt_gen;
+import 'package:webcrawler/helpers/database.dart' as database;
 
 class WhatsAppChat extends StatefulWidget {
   final String chatName;

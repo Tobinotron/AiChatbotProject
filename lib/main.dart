@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:webcrawler/home_page.dart';
+import 'package:webcrawler/ui/home_page.dart';
 
 void main() {
   runApp(MyApp());

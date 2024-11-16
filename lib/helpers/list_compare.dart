@@ -1,5 +1,5 @@
 import 'package:text_analysis/text_analysis.dart' as ta;
-import 'package:webcrawler/database.dart' as database;
+import 'package:webcrawler/helpers/database.dart' as database;
 
 Map<String, double> globalWordRarity = {};
 
