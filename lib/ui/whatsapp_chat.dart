@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:shared_preferences/shared_preferences.dart';
 import 'settings_drawer.dart';
 import 'package:webcrawler/helpers/list_compare.dart' as list_compare;
 import 'package:webcrawler/helpers/prompt_generator.dart' as prompt_gen;
@@ -55,7 +56,8 @@ class _WhatsAppChatState extends State<WhatsAppChat> {
         await initializeDatabase();
         await initializeStopwords();
         String resources = await getHighestMatchingArticlesAsString(message);
-        String response = await prompt_gen.generateResponse(resources, message);
+        String responseLength = (await SharedPreferences.getInstance()).getString('responseLength') ?? 'Kurz';
+        String response = await prompt_gen.generateResponse(resources, message, responseLength);
         response = utf8.decode(latin1.encode(response));
         setState(() {
           messages.add({'sender': 'bot', 'message': response});

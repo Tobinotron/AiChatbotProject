@@ -13,10 +13,12 @@ const String prePrompt = "Du bist ein Nachrichtendienst. Gebe nur Fakten zurück
 
 const String middlePrompt = "\nAuf folgende Frage solltest du antworten:";
 
-// Send the message to the server with character information
-Future<String> generateResponse(String resources, String question) async {
+const String lengthPrompt = "\nDeine Nachricht sollte so lange sein: ";
 
-  String message = prePrompt + resources + middlePrompt + question;
+// Send the message to the server with character information
+Future<String> generateResponse(String resources, String question, String length) async {
+
+  String message = prePrompt + resources + middlePrompt + question + lengthPrompt + length;
   String model = "liquid/lfm-40b:free";
 
   return await sendToServer(message, model);

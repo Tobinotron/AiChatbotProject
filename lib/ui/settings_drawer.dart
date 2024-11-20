@@ -7,7 +7,7 @@ class SettingsDrawer extends StatefulWidget {
 }
 
 class _SettingsDrawerState extends State<SettingsDrawer> {
-  String responseLength = 'Short'; // Default response length
+  String responseLength = 'Kurz'; // Default response length
 
   @override
   void initState() {
@@ -19,7 +19,7 @@ class _SettingsDrawerState extends State<SettingsDrawer> {
   Future<void> _loadSettings() async {
     final prefs = await SharedPreferences.getInstance();
     setState(() {
-      responseLength = prefs.getString('responseLength') ?? 'Short';
+      responseLength = prefs.getString('responseLength') ?? 'Kurz';
     });
   }
 
@@ -51,8 +51,8 @@ class _SettingsDrawerState extends State<SettingsDrawer> {
             title: Text("Response Length"),
           ),
           RadioListTile<String>(
-            title: Text('Short'),
-            value: 'Short',
+            title: Text('Kurz'),
+            value: 'Kurz',
             groupValue: responseLength,
             onChanged: (value) {
               setState(() {
@@ -62,8 +62,8 @@ class _SettingsDrawerState extends State<SettingsDrawer> {
             },
           ),
           RadioListTile<String>(
-            title: Text('Medium'),
-            value: 'Medium',
+            title: Text('Mittel'),
+            value: 'Mittel',
             groupValue: responseLength,
             onChanged: (value) {
               setState(() {
@@ -73,8 +73,8 @@ class _SettingsDrawerState extends State<SettingsDrawer> {
             },
           ),
           RadioListTile<String>(
-            title: Text('Detailed'),
-            value: 'Detailed',
+            title: Text('Lang'),
+            value: 'Lang',
             groupValue: responseLength,
             onChanged: (value) {
               setState(() {
