@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 import 'whatsapp_chat.dart';
 import 'settings_drawer.dart';
+import 'add_chat_button.dart';  // Import the new widget
 
 List<Map<String, String?>> chatData = [
   {"name": "Person 1", "imagePath": null},
   {"name": "Person 2", "imagePath": null},
 ];
 
-Map<String, List<Map<String, String>>> globalMessages= {
+Map<String, List<Map<String, String>>> globalMessages = {
   "Person 1": [],
   "Person 2": []
 };
+
+void testFunction() {
+  print("Test function called!");
+}
 
 class HomePage extends StatefulWidget {
   @override
@@ -18,6 +23,17 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  void _addNewChat() {
+    setState(() {
+      chatData.add({
+        "name": "New Chat ${chatData.length + 1}",
+        "imagePath": null,
+      });
+    });
+
+    importChatFile();  // Call the importChatFile func  when button is pressed
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,29 +60,31 @@ class _HomePageState extends State<HomePage> {
         itemCount: chatData.length,
         itemBuilder: (context, index) {
           return Container(
-            height: 80, // Set a minimum height for each entry
+            height: 80,
             child: ListTile(
               contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
               leading: CircleAvatar(
-                radius: 30, // Increase the radius for a larger avatar
+                radius: 30,
                 backgroundColor: Colors.grey[400],
                 backgroundImage: chatData[index]['imagePath'] != null
                     ? AssetImage(chatData[index]['imagePath']!)
                     : null,
                 child: chatData[index]['imagePath'] == null
-                    ? Icon(Icons.person, color: Colors.white, size: 30) // Adjust icon size
+                    ? Icon(Icons.person, color: Colors.white, size: 30)
                     : null,
               ),
               title: Text(
                 chatData[index]['name'] ?? 'Unknown',
-                style: TextStyle(fontSize: 18), // Increase font size if needed
+                style: TextStyle(fontSize: 18),
               ),
               onTap: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => WhatsAppChat(chatName: chatData[index]['name'] ?? 'Unknown',
-                                                      globalMessageList : globalMessages),
+                    builder: (context) => WhatsAppChat(
+                      chatName: chatData[index]['name'] ?? 'Unknown',
+                      globalMessageList: globalMessages,
+                    ),
                   ),
                 );
               },
@@ -74,16 +92,8 @@ class _HomePageState extends State<HomePage> {
           );
         },
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            chatData.add({
-              "name": "New Chat ${chatData.length + 1}",
-              "imagePath": null,
-            });
-          });
-        },
-        child: Icon(Icons.add),
+      floatingActionButton: AddChatButton(
+        onPressed: _addNewChat,  // Pass the method directly to the button
       ),
     );
   }
@@ -105,7 +115,7 @@ class ChatListDrawer extends StatelessWidget {
             child: Text('Chat History', style: TextStyle(color: Colors.white, fontSize: 24)),
           ),
           ...chatData.map((chat) => Container(
-            height: 80, // Set a minimum height for each entry in the drawer
+            height: 80,
             child: ListTile(
               contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
               leading: CircleAvatar(
@@ -126,8 +136,10 @@ class ChatListDrawer extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => WhatsAppChat(chatName: chat['name'] ?? 'Unknown',
-                                                      globalMessageList : globalMessages),
+                    builder: (context) => WhatsAppChat(
+                      chatName: chat['name'] ?? 'Unknown',
+                      globalMessageList: globalMessages,
+                    ),
                   ),
                 );
               },
