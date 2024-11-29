@@ -37,6 +37,12 @@ android {
             signingConfig = signingConfigs.debug
         }
     }
+
+    dependencies {
+        implementation 'org.tensorflow:tensorflow-lite:2.11.0'
+        implementation 'org.tensorflow:tensorflow-lite-gpu:2.11.0'
+        implementation 'org.tensorflow:tensorflow-lite-gpu-api:2.10.0'
+    }
 }
 
 flutter {
