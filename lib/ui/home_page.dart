@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'whatsapp_chat.dart';
 import 'settings_drawer.dart';
 import 'add_chat_button.dart';  // Import the new widget
+import 'package:file_picker/file_picker.dart'; // Add this to your pubspec.yaml dependencies
+import 'package:webcrawler/helpers/convert_chat_file.dart' as chatConvert;
 
 List<Map<String, String?>> chatData = [
   {"name": "Person 1", "imagePath": null},
@@ -30,8 +32,65 @@ class _HomePageState extends State<HomePage> {
         "imagePath": null,
       });
     });
+  }
 
-    importChatFile();  // Call the importChatFile func  when button is pressed
+  // importChatFile() muss im _HomePageState sein
+  Future<void> importChatFile() async {
+    // Step 1: Pick a file
+    FilePickerResult? result = await FilePicker.platform.pickFiles();
+
+    if (result != null && result.files.single.path != null) {
+      String filePath = result.files.single.path!;
+
+      // Step 2: Validate and extract chat members
+      List<String>? nameList = chatConvert.getChatMembers(filePath);
+
+      if (nameList == null || nameList.isEmpty) {
+        // Show error if file is invalid
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text("Invalid File"),
+              content: Text("The selected file is not valid for import."),
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Text("OK"),
+                ),
+              ],
+            );
+          },
+        );
+        return;
+      }
+
+      // Step 3: Show name selection popup
+      String? selectedName = await showDialog<String>(
+        context: context,
+        builder: (BuildContext context) {
+          return NameSelectionDialog(nameList: nameList);
+        },
+      );
+
+      if (selectedName != null) {
+        // Step 4: Process the selected name and read messages
+        chatConvert.readMessagesIntoDatabase(filePath, selectedName);
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text("Chat for $selectedName added successfully!")),
+        );
+
+        // Update the chat list
+        setState(() {
+          chatData.add({
+            "name": selectedName,
+            "imagePath": null, // Add image path if necessary
+          });
+        });
+      }
+    }
   }
 
   @override
@@ -93,7 +152,7 @@ class _HomePageState extends State<HomePage> {
         },
       ),
       floatingActionButton: AddChatButton(
-        onPressed: _addNewChat,  // Pass the method directly to the button
+        onPressed: importChatFile, // Pass the updated importChatFile method
       ),
     );
   }
