@@ -1,4 +1,4 @@
-import 'package:webcrawler/helpers/msg_database.dart' as db;
+import 'package:webcrawler/apis/msg_database.dart' as db;
 import 'dart:io';
 
 /*

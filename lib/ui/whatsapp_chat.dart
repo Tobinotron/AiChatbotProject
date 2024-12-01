@@ -7,8 +7,9 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'settings_drawer.dart';
 import 'package:webcrawler/helpers/list_compare.dart' as list_compare;
-import 'package:webcrawler/helpers/prompt_generator.dart' as prompt_gen;
+import 'package:webcrawler/apis/prompt_generator.dart' as prompt_gen;
 import 'package:webcrawler/helpers/database.dart' as database;
+import 'package:webcrawler/apis/msg_database.dart' as db;
 
 class WhatsAppChat extends StatefulWidget {
   final String chatName;
@@ -44,8 +45,10 @@ class _WhatsAppChatState extends State<WhatsAppChat> {
   }
 
   // Function to handle sending a message
-  void _sendMessage(String message) {
+  void _sendMessage(String message) async{
     if (message.isNotEmpty) {
+      // Write message to Database
+      await db.addMessageToDatabase(widget.chatName, 'user', message);
       setState(() {
         messages.add({'sender': 'user', 'message': message});
       });
@@ -59,6 +62,8 @@ class _WhatsAppChatState extends State<WhatsAppChat> {
         String responseLength = (await SharedPreferences.getInstance()).getString('responseLength') ?? 'Kurz';
         String response = await prompt_gen.generateResponse(resources, message, responseLength);
         response = utf8.decode(latin1.encode(response));
+        // Write response to database
+        await db.addMessageToDatabase(widget.chatName, 'bot', response);
         setState(() {
           messages.add({'sender': 'bot', 'message': response});
         });
