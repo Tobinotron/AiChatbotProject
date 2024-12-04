@@ -41,9 +41,23 @@ Future<void> initDb() async {
 // Get a reference your Supabase client
 final supabase = Supabase.instance.client;
 
-void addToDatabase(String name, String message) async {
+void addRAGToDatabase(String person, String message) async {
   List<double> embedding = await embedder.generateText(message);
-  print("Message '" + message + "' from " + name + " was succesfully added to database. It has embedding value: '" + embedding.toString() + "'");
+  try {
+    // Insert the data into the 'message_history' table
+    await supabase
+      .from('rag_messages')
+      .insert({
+        'person': person,
+        'embedding': embedding,
+        'message': message,
+      });
+
+    print('Message added successfully');
+  } catch (e) {
+    print('Error adding message to database: $e');
+  }
+  print("Message '" + message + "' from " + person + " was succesfully added to database. It has embedding value: '" + embedding.toString() + "'");
 }
 
 Future<void> addMessageToDatabase(String person, String sender, String message) async {
