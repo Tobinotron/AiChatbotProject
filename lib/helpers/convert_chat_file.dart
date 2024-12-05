@@ -2,10 +2,11 @@ import 'package:webcrawler/apis/msg_database.dart' as db;
 import 'dart:io';
 
 /*
-  Inputs: -chatFilePath... Pfad zur Chat-Datei im selben Format wie /assets/TestWhatsappChat.txt
-  Return: List<String> aller Chat-Teilnehmer
-  Wichtig: Die Nachrichten dass WhatsAppChats End-toEnd verschlüsselt sind sollen natürlich Ignoriert werden.
-           Wenn die File vom falschen Format ist, soll null zurückgegeben werden ~T
+  Verarbeitet das chatFile und gibt die Namen aller Chat Teilnehmer zurück.
+  Input:
+    - String chatFilePath : Pfad zur Chat-Datei im selben Format wie /assets/TestWhatsappChat.txt
+  Output:
+    - List<String>? names : Namen aller Chat-Teilnehmer, kann null sein falls das File ein falsches Format hat.
 */
 List<String>? getChatMembers(String chatFilePath) {
   try {
@@ -37,10 +38,12 @@ List<String>? getChatMembers(String chatFilePath) {
 }
 
 /*
-  Inputs: -chatFilePath... Pfad zur Chat-Datei im selben Format wie /assets/TestWhatsappChat.txt
-          -name... Name der Person deren Nachrichten gespeichert werden sollen
-  Wichtig: Die Nachrichten dass WhatsAppChats End-toEnd verschlüsselt sind sollen natürlich Ignoriert werden.
-           Genau so sollen auch Nachrichten mit <Medien ausgeschlossen> als message ignoriert werden ~T
+  Geht das chatFile durch und ruft 'db.addRAGToDatabase(name, message)' für alle Nachrichten der gegebenen Person auf
+  Input:
+    - String chatFilePath : Pfad zur Chat-Datei im selben Format wie /assets/TestWhatsappChat.txt
+    - String name : Name der Person deren Nachrichten gespeichert werden sollen
+  Output:
+    - void
 */
 void readMessagesIntoDatabase(String chatFilePath, String name) {
   try {

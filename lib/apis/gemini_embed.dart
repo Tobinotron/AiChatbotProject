@@ -16,6 +16,5 @@ Future<List<double>> generateText(String prompt) async {
   return(response.embedding.values);
 }
 
-
 //void main(List<String> args) {
 //}

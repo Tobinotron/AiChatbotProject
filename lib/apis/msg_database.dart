@@ -41,6 +41,14 @@ Future<void> initDb() async {
 // Get a reference your Supabase client
 final supabase = Supabase.instance.client;
 
+/*
+  Adds a RAG message from the WhatsApp ChatFile to the Database.
+  Input:
+    - String person  : The name of the person that sent the message
+    - String message : The contens of the message as a String. This message will be embedded and also become a field in the Dataset.
+  Output:
+    - void
+*/
 void addRAGToDatabase(String person, String message) async {
   List<double> embedding = await embedder.generateText(message);
   try {
@@ -60,6 +68,15 @@ void addRAGToDatabase(String person, String message) async {
   print("Message '" + message + "' from " + person + " was succesfully added to database. It has embedding value: '" + embedding.toString() + "'");
 }
 
+/*
+  Adds a message to the supabase Database.
+  Input:
+    - String person  : The name of the person chatted with
+    - String sender  : The sender of the message, either 'user' or 'bot'
+    - String message : The contens of the message as a String
+  Output:
+    - void
+*/
 Future<void> addMessageToDatabase(String person, String sender, String message) async {
   try {
     // Insert the data into the 'message_history' table
@@ -75,4 +92,53 @@ Future<void> addMessageToDatabase(String person, String sender, String message) 
   } catch (e) {
     print('Error adding message to database: $e');
   }
+}
+
+/*
+  Fetches the names of all chat members and returns them as a List
+  Input:
+    - none
+  Output:
+    - List<Map<String, String?>> chatData : with fields 'name' and 'msg_time'
+*/
+Future<List<Map<String, String?>>> fetchChatsData() async {
+  List<Map<String, String?>> chatData = [];
+  // TODO: implement
+  return chatData;
+}
+
+/*
+  Fetches all chat messages belonging to a single Person and returns them as a List
+  Input:
+    - String person : name of the person whose chat data should be fetched
+  Output:
+    - List<Map<String, String>> chatHistory : with fields 'sender' and 'message'. No null values allowed.
+*/
+Future<List<Map<String, String>>> fetchMessageHistory(String person) async {
+  List<Map<String, String>> chatHistory = [];
+  // TODO: implement
+  return chatHistory;
+}
+
+/*
+  Deletes the chatHistory with a specific person
+  Input:
+    - String person : name of the person whose chatHistory should be deleted
+  Output:
+    - void
+*/
+Future<void> deleteMessageHistory(String person) async {
+  // TODO: implement
+}
+
+/*
+  Deletes the entire Chat with a specific person, meaning chatHistory and RAG messages in the Database
+  Input:
+    - String person : name of the person whose Data should be deleted
+  Output:
+    - void
+*/
+Future<void> deleteChat(String person) async {
+  deleteMessageHistory(person);
+  // TODO: also delete the RAG messages
 }

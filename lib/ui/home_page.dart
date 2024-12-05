@@ -6,8 +6,8 @@ import 'package:file_picker/file_picker.dart'; // Add this to your pubspec.yaml 
 import 'package:webcrawler/helpers/convert_chat_file.dart' as chatConvert;
 
 List<Map<String, String?>> chatData = [
-  {"name": "Person 1", "imagePath": null},
-  {"name": "Person 2", "imagePath": null},
+  {"name": "Person 1", "imagePath": null, "msg_time": null},
+  {"name": "Person 2", "imagePath": null, "msg_time": null},
 ];
 
 Map<String, List<Map<String, String>>> globalMessages = {
@@ -86,7 +86,8 @@ class _HomePageState extends State<HomePage> {
         setState(() {
           chatData.add({
             "name": selectedName,
-            "imagePath": null, // Add image path if necessary
+            "imagePath": null,
+            "msg_time": null,
           });
         });
       }
