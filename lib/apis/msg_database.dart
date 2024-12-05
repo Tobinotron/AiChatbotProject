@@ -51,8 +51,9 @@ final supabase = Supabase.instance.client;
 */
 void addRAGToDatabase(String person, String message) async {
   List<double> embedding = await embedder.generateText(message);
+
   try {
-    // Insert the data into the 'message_history' table
+    // Insert the data into the 'rag_messages' table
     await supabase
       .from('rag_messages')
       .insert({
@@ -61,11 +62,17 @@ void addRAGToDatabase(String person, String message) async {
         'message': message,
       });
 
-    print('Message added successfully');
+    // Update or insert into 'chats'
+    await supabase
+      .from('chats')
+      .upsert({
+        'person': person,
+      });
+
+    print('RAG message and chat data added successfully');
   } catch (e) {
-    print('Error adding message to database: $e');
+    print('Error adding RAG message to database: $e');
   }
-  print("Message '" + message + "' from " + person + " was succesfully added to database. It has embedding value: '" + embedding.toString() + "'");
 }
 
 /*
@@ -88,7 +95,7 @@ Future<void> addMessageToDatabase(String person, String sender, String message) 
         'message': message,
       });
 
-    print('Message added successfully');
+    print('Message and chat data added successfully');
   } catch (e) {
     print('Error adding message to database: $e');
   }
@@ -99,12 +106,27 @@ Future<void> addMessageToDatabase(String person, String sender, String message) 
   Input:
     - none
   Output:
-    - List<Map<String, String?>> chatData : with fields 'name' and 'msg_time'
+    - List<Map<String, dynamic>> chatData : with fields 'name' and 'msg_time'
 */
 Future<List<Map<String, String?>>> fetchChatsData() async {
-  List<Map<String, String?>> chatData = [];
-  // TODO: implement
-  return chatData;
+  try {
+    final response = await supabase
+      .from('chats')
+      .select('person');
+
+    // Convert each dynamic map to a Map<String, String>
+    final List<Map<String, String?>> data = response.map((entry) {
+      return {
+        'name': entry['person']?.toString(),
+        'image_path': null,
+      };
+    }).toList();
+
+    return data;
+  } catch (e) {
+    print('Error fetching chats data: $e');
+    return [];
+  }
 }
 
 /*
@@ -115,30 +137,76 @@ Future<List<Map<String, String?>>> fetchChatsData() async {
     - List<Map<String, String>> chatHistory : with fields 'sender' and 'message'. No null values allowed.
 */
 Future<List<Map<String, String>>> fetchMessageHistory(String person) async {
-  List<Map<String, String>> chatHistory = [];
-  // TODO: implement
-  return chatHistory;
+  try {
+    final response = await supabase
+        .from('message_history')
+        .select('sender, message')
+        .eq('person', person);
+
+    // Parse the response as a List of dynamic maps
+    final List<Map<String, dynamic>> data = List<Map<String, dynamic>>.from(response);
+
+    // Convert each dynamic map to a Map<String, String>
+    final List<Map<String, String>> chatHistory = data.map((entry) {
+      return {
+        'sender': entry['sender']?.toString() ?? '',
+        'message': entry['message']?.toString() ?? '',
+      };
+    }).toList();
+
+    return chatHistory;
+  } catch (e) {
+    print('Error fetching message history for $person: $e');
+    return [];
+  }
 }
 
 /*
-  Deletes the chatHistory with a specific person
+  Deletes the chat_history of a specific person
   Input:
     - String person : name of the person whose chatHistory should be deleted
   Output:
     - void
 */
 Future<void> deleteMessageHistory(String person) async {
-  // TODO: implement
+  try {
+    await supabase
+      .from('message_history')
+      .delete()
+      .eq('person', person);
+    
+    print('Message history deleted for $person');
+  } catch (e) {
+    print('Error deleting message history for $person: $e');
+  }
 }
 
 /*
-  Deletes the entire Chat with a specific person, meaning chatHistory and RAG messages in the Database
+  Deletes the entire Chat with a specific person, meaning all entries in chats, chat_history and rag_messages in the Database
   Input:
     - String person : name of the person whose Data should be deleted
   Output:
     - void
 */
 Future<void> deleteChat(String person) async {
-  deleteMessageHistory(person);
-  // TODO: also delete the RAG messages
+  try {
+    // Delete chat from 'message_history'
+    await deleteMessageHistory(person);
+
+    // Delete RAG messages
+    await supabase
+      .from('rag_messages')
+      .delete()
+      .eq('person', person);
+
+    // Delete from 'chats'
+    await supabase
+      .from('chats')
+      .delete()
+      .eq('person', person);
+
+    print('Chat data deleted for $person');
+  } catch (e) {
+    print('Error deleting chat data for $person: $e');
+  }
 }

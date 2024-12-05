@@ -4,16 +4,9 @@ import 'settings_drawer.dart';
 import 'add_chat_button.dart';  // Import the new widget
 import 'package:file_picker/file_picker.dart'; // Add this to your pubspec.yaml dependencies
 import 'package:webcrawler/helpers/convert_chat_file.dart' as chatConvert;
+import 'package:webcrawler/apis/msg_database.dart' as db;
 
-List<Map<String, String?>> chatData = [
-  {"name": "Person 1", "imagePath": null, "msg_time": null},
-  {"name": "Person 2", "imagePath": null, "msg_time": null},
-];
-
-Map<String, List<Map<String, String>>> globalMessages = {
-  "Person 1": [],
-  "Person 2": []
-};
+List<Map<String, String?>> chatData = [];
 
 void testFunction() {
   print("Test function called!");
@@ -25,6 +18,24 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  @override
+  void initState() {
+    super.initState();
+    _loadChats();
+  }
+
+  void _loadChats() async {
+    try {
+      final fetchedChatData = await db.fetchChatsData();
+      setState(() {
+        chatData = fetchedChatData;
+      });
+    } catch (e) {
+      print('Error loading messages: $e');
+    }
+  }
+
   void _addNewChat() {
     setState(() {
       chatData.add({
@@ -143,7 +154,6 @@ class _HomePageState extends State<HomePage> {
                   MaterialPageRoute(
                     builder: (context) => WhatsAppChat(
                       chatName: chatData[index]['name'] ?? 'Unknown',
-                      globalMessageList: globalMessages,
                     ),
                   ),
                 );
@@ -198,7 +208,6 @@ class ChatListDrawer extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (context) => WhatsAppChat(
                       chatName: chat['name'] ?? 'Unknown',
-                      globalMessageList: globalMessages,
                     ),
                   ),
                 );
