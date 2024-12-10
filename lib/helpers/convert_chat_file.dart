@@ -67,6 +67,7 @@ void readMessagesIntoDatabase(String chatFilePath, String name) {
         }
       }
     }
+    db.addPersonToDatabase(name);
     print("Es wurden ${messageCount} Nachrichten von ${name} hinzugefügt.");
   } catch (e) {
     print("Fehler beim Verarbeiten der Datei: \$e");

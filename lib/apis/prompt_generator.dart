@@ -1,7 +1,6 @@
 import 'dart:convert'; // For JSON encoding and decoding
 import 'package:http/http.dart' as http; // For making HTTP requests
-import 'package:webcrawler/apis/msg_database.dart';
-
+import 'msg_database.dart' as db;
 
 // Set your API key here
 const String apiKey = "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";
@@ -10,29 +9,33 @@ const String apiKey = "sk-or-v1-83982d8f62f5796ca82c8a291609da1d9b167e565f46a3a4
 const String url = "https://openrouter.ai/api/v1/chat/completions";
 
 // Pre-Prompt Options
-const String prePrompt = "Du bist ein Nachrichtendienst. Gebe nur Fakten zurück, die du aus Folgenden Resourcen erhältst: \n";
+const String prePrompt = "Du bist ein Gesprächsteilnehmer auf WhatsApp. Antworte im selben Stil wie folgende Nachrichten: \n";
 
-const String middlePrompt = "\nAuf folgende Frage solltest du antworten:";
+const String middlePrompt = "\nFühre folgende Konversation fort:";
+
+const String finalPrompt = "Du bist in den Konversationen 'bot', dein gegenüber ist 'user'. Wiederhole nicht, was User sagt sondern führe eine echte Konversation. Hier ist eine kurze Beschreibung wer du bist:";
 
 const String lengthPrompt = "\nDeine Nachricht sollte so lange sein: ";
 
 // Send the message to the server with character information
-Future<String> generateResponse(String resources, String question, String length) async {
+Future<String> generateResponse(String resources, String question, String length, List<Map<String, String>> messageHistory, String description) async {
 
-  String message = prePrompt + resources + middlePrompt + question + lengthPrompt + length;
+  String message = prePrompt + resources + middlePrompt + question + finalPrompt + description + lengthPrompt + length;
   String model = "liquid/lfm-40b:free";
+  //String model = "meta-llama/llama-3.1-70b-instruct:free";
 
-  return await sendToServer(message, model);
+  List<Map<String, String>> msg_to_send = messageHistory + [{"role": "user", "content": message}];
+  return await sendToServer(msg_to_send, model);
 }
 
 // Function to send the message to the server
-Future<String> sendToServer(String message, String model) async {
+Future<String> sendToServer(List<Map<String, String>> message, String model) async {
   // Create the data to send
+
+
   Map<String, dynamic> requestData = {
     "model": model,
-    "messages": [
-      {"role": "user", "content": message}
-    ]
+    "messages": message
   };
 
   // Convert the data to JSON format
@@ -72,4 +75,14 @@ String _handleResponse(String responseBody) {
   } else {
     return "ERROR";
   }
+}
+
+String desc_prompt = "Du bist Gesprächsteilnehmer auf Whatsapp. Bitte schreibe eine kurze Beschreibung, wie man so schreibt wie eine Person die folgende Nachrichten geschrieben hat. Schätze auch ein wer du Familiär bist. \n";
+
+Future<String> generateDescription(String person) async {
+  String messages = await db.fetchAllRAGMessages(person);
+  String model = "liquid/lfm-40b:free";
+  List<Map<String, String>> msg_to_send = [{"role": "user", "content": desc_prompt + messages}];
+  
+  return await sendToServer(msg_to_send, model);
 }

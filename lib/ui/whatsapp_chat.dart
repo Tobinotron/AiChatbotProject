@@ -43,11 +43,12 @@ class _WhatsAppChatState extends State<WhatsAppChat> {
 
       // Automatically respond after a short delay
       Future.delayed(Duration(seconds: 1), () async {
-        await initializeDatabase();
-        await initializeStopwords();
-        String resources = await getHighestMatchingArticlesAsString(message);
+        //await initializeDatabase();
+        //await initializeStopwords();
+        String person_desc = await db.fetchPersonDescription(widget.chatName);
+        String rag_messages = await db.fetchClosestRAGMessages(widget.chatName, message);
         String responseLength = (await SharedPreferences.getInstance()).getString('responseLength') ?? 'Kurz';
-        String response = await prompt_gen.generateResponse(resources, message, responseLength);
+        String response = await prompt_gen.generateResponse(rag_messages, message, responseLength, messages, person_desc);
         response = utf8.decode(latin1.encode(response));
         // Write response to database
         await db.addMessageToDatabase(widget.chatName, 'bot', response);

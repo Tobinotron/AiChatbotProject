@@ -1,6 +1,10 @@
+import 'dart:convert';
+import 'dart:math';
+
 import 'package:flutter/widgets.dart';
 import 'package:webcrawler/apis/gemini_embed.dart' as embedder;
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'prompt_generator.dart' as prompt_gen;
 
 //import 'package:tflite_flutter/tflite_flutter.dart';
 /*
@@ -62,13 +66,6 @@ void addRAGToDatabase(String person, String message) async {
         'message': message,
       });
 
-    // Update or insert into 'chats'
-    await supabase
-      .from('chats')
-      .upsert({
-        'person': person,
-      });
-
     print('RAG message and chat data added successfully');
   } catch (e) {
     print('Error adding RAG message to database: $e');
@@ -101,6 +98,18 @@ Future<void> addMessageToDatabase(String person, String sender, String message) 
   }
 }
 
+Future<void> addPersonToDatabase(String person) async {
+  String description = await prompt_gen.generateDescription(person);
+
+  // Update or insert into 'chats'
+    await supabase
+      .from('chats')
+      .upsert({
+        'person': person,
+        'description' : description
+      });
+}
+
 /*
   Fetches the names of all chat members and returns them as a List
   Input:
@@ -126,6 +135,24 @@ Future<List<Map<String, String?>>> fetchChatsData() async {
   } catch (e) {
     print('Error fetching chats data: $e');
     return [];
+  }
+}
+
+Future<String> fetchPersonDescription(String person) async {
+  try {
+    final response = await supabase
+      .from('chats')
+      .select('person, description')
+      .eq('person', person);
+    
+    // Parse the response as a List of dynamic maps
+    final List<Map<String, dynamic>> data = List<Map<String, dynamic>>.from(response);
+
+    return data[0]['description'];
+
+  }
+  catch (e) {
+    return "Keine Beschreibung vorhanden";
   }
 }
 
@@ -159,6 +186,91 @@ Future<List<Map<String, String>>> fetchMessageHistory(String person) async {
     print('Error fetching message history for $person: $e');
     return [];
   }
+}
+
+Future <String> fetchAllRAGMessages(String person) async {
+  try {
+    final response = await supabase
+      .from('rag_messages')
+      .select('message')
+      .eq('person', person);
+    
+    String msg_acc = "";
+
+    for (Map<String, dynamic> msg in response) {
+      msg_acc += msg['message'].toString() + ", ";
+    }
+
+    return msg_acc;
+  }
+  catch (e) {
+    return "";
+  }
+}
+
+Future<String> fetchClosestRAGMessages(String person, String msg) async {
+  try {
+    String closestMessages = "";
+    
+    List<double> embedding = await embedder.generateText(msg);
+
+    // Fetch the data from the rag_messages table
+    final response = await supabase
+      .from('rag_messages')
+      .select('embedding, message')
+      .eq('person', person);
+
+    List<Map<String, dynamic>> messagesWithSimilarity = [];
+
+    // Process each message and its embedding
+    for (Map<String, dynamic> entry in response) {
+      // Ensure that 'embedding' is parsed as a List<double> if it's a string
+      List<double> storedEmbedding = List<double>.from(jsonDecode(entry['embedding']));
+
+      // Calculate cosine similarity between the input message embedding and stored message embedding
+      double similarity = cosineSimilarity(embedding, storedEmbedding);
+
+      // Add the message and its similarity to the list
+      messagesWithSimilarity.add({
+        'message': entry['message'],
+        'similarity': similarity,
+      });
+    }
+
+    // Sort the messages by similarity in descending order
+    messagesWithSimilarity.sort((a, b) => b['similarity'].compareTo(a['similarity']));
+
+    // Append the top 5 messages to the result string
+    int count = 0;
+    for (var entry in messagesWithSimilarity) {
+      if (count >= 10 || count == messagesWithSimilarity.length) break;
+      closestMessages += "${entry['message']}, ";
+      count++;
+    }
+
+    return closestMessages;
+  } catch (e) {
+    print("An error occurred: $e");
+    return "";
+  }
+}
+
+// Function to calculate the cosine similarity between two vectors
+double cosineSimilarity(List<double> vector1, List<double> vector2) {
+  double dotProduct = 0.0;
+  double norm1 = 0.0;
+  double norm2 = 0.0;
+
+  for (int i = 0; i < vector1.length; i++) {
+    dotProduct += vector1[i] * vector2[i];
+    norm1 += vector1[i] * vector1[i];
+    norm2 += vector2[i] * vector2[i];
+  }
+
+  norm1 = sqrt(norm1);
+  norm2 = sqrt(norm2);
+
+  return dotProduct / (norm1 * norm2);
 }
 
 /*
