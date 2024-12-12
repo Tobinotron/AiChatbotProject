@@ -174,46 +174,134 @@ class ChatListDrawer extends StatelessWidget {
 
   ChatListDrawer({required this.chatData});
 
+  void _showDeleteOptions(BuildContext context, String person) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Löschen'),
+          content: Text(
+              'Möchten Sie nur den Nachrichtenverlauf oder den gesamten Chat löschen?'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+                _confirmDelete(context, person, db.deleteMessageHistory);
+              },
+              child: Text('Chatverlauf löschen'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+                _confirmDelete(context, person, db.deleteChat);
+              },
+              child: Text('Gesamten Chat löschen'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Close dialog
+              },
+              child: Text('Abbrechen'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void _confirmDelete(BuildContext context, String person,
+      Future<void> Function(String) deleteFunction) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Sind Sie sicher?'),
+          content: Text('Diese Aktion kann nicht rückgängig gemacht werden.'),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(), // Close dialog
+              child: Text('Abbrechen'),
+            ),
+            TextButton(
+              onPressed: () async {
+                Navigator.of(context).pop(); // Close confirmation dialog
+                await deleteFunction(person);
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                      content: Text('Löschvorgang abgeschlossen für $person')),
+                );
+              },
+              child: Text('Löschen'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
-          DrawerHeader(
-            decoration: BoxDecoration(color: Colors.blue),
-            child: Text('Chat History', style: TextStyle(color: Colors.white, fontSize: 24)),
-          ),
-          ...chatData.map((chat) => Container(
-            height: 80,
-            child: ListTile(
-              contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-              leading: CircleAvatar(
-                radius: 30,
-                backgroundColor: Colors.grey[400],
-                backgroundImage: chat['imagePath'] != null
-                    ? AssetImage(chat['imagePath']!)
-                    : null,
-                child: chat['imagePath'] == null
-                    ? Icon(Icons.person, color: Colors.white, size: 30)
-                    : null,
+          SizedBox(
+            height: 150, // Adjust the height as needed
+            child: DrawerHeader(
+              decoration: BoxDecoration(color: Colors.green[700]),
+              margin: EdgeInsets.zero,
+              padding: EdgeInsets.all(16.0),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Chats',
+                  style: TextStyle(
+                      color: Colors.white, fontSize: 26), // Adjust font size
+                ),
               ),
-              title: Text(
-                chat['name'] ?? 'Unknown',
-                style: TextStyle(fontSize: 18),
-              ),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => WhatsAppChat(
-                      chatName: chat['name'] ?? 'Unknown',
-                    ),
-                  ),
-                );
-              },
             ),
-          )),
+          ),
+          ...chatData.map((chat) =>
+              Container(
+                height: 80,
+                child: ListTile(
+                  contentPadding: EdgeInsets.symmetric(
+                      horizontal: 16, vertical: 10),
+                  leading: CircleAvatar(
+                    radius: 30,
+                    backgroundColor: Colors.grey[400],
+                    backgroundImage: chat['imagePath'] != null
+                        ? AssetImage(chat['imagePath']!)
+                        : null,
+                    child: chat['imagePath'] == null
+                        ? Icon(Icons.person, color: Colors.white, size: 30)
+                        : null,
+                  ),
+                  title: Text(
+                    chat['name'] ?? 'Unknown',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                  trailing: IconButton(
+                    icon: Icon(Icons.delete, color: Colors.red),
+                    onPressed: () {
+                      if (chat['name'] != null) {
+                        _showDeleteOptions(context, chat['name']!);
+                      }
+                    },
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            WhatsAppChat(
+                              chatName: chat['name'] ?? 'Unknown',
+                            ),
+                      ),
+                    );
+                  },
+                ),
+              )),
         ],
       ),
     );
