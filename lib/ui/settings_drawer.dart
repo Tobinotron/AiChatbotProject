@@ -39,7 +39,7 @@ class _SettingsDrawerState extends State<SettingsDrawer> {
             height: 150, // Adjust the height as desired
             child: DrawerHeader(
               decoration: BoxDecoration(
-                color: Colors.green[700],
+                color: Color(int.parse("#25D366".substring(1, 7), radix: 16) + 0xFF000000),
               ),
               margin: EdgeInsets.zero,
               padding: EdgeInsets.all(16.0),
@@ -95,28 +95,17 @@ class _SettingsDrawerState extends State<SettingsDrawer> {
           ListTile(
             leading: Icon(Icons.info),
             title: Text("Über die App"),
-            onTap: () => _showDialog(context, 'Über die App', 'Diese Chatbot-App wurde entwickelt, um einer Person nachzuahmen.'),
+            onTap: () => _showDialog(context, 'Über die App', 'Diese Chatbot-App wurde als Praktikumsarbeit and der PLUS Universität Salzburg entwickelt'),
           ),
           ListTile(
             leading: Icon(Icons.support),
             title: Text("Hilfe & Support"),
-            onTap: () => _showDialog(context, 'Hilfe & Support', 'Kontaktieren Sie uns für Hilfe.'),
+            onTap: () => _showDialog(context, 'Hilfe & Support', 'Auf WhatsApp kann der Chatverlauf mit Kontakten heruntergeladen werden. Lädt man diese Datei über das "Plus" unten in der Ecke hoch, kann eine Person ausgewählt werden, dessen Stil von dem Bot nachgeahmt werden soll.'),
           ),
           ListTile(
             leading: Icon(Icons.contact_mail),
-            title: Text("Kontakt"),
-            onTap: () => _showDialog(context, 'Kontakt', 'E-Mail: support@example.com'),
-          ),
-          Divider(),
-          ListTile(
-            leading: Icon(Icons.exit_to_app),
-            title: Text("Abmelden"),
-            onTap: () => _showDialog(context, 'Abmelden', 'Sind Sie sicher, dass Sie sich abmelden möchten?'),
-          ),
-          ListTile(
-            leading: Icon(Icons.delete_forever),
-            title: Text("Account löschen"),
-            onTap: () => _showDialog(context, 'Account löschen', 'Möchten Sie Ihren Account wirklich löschen?'),
+            title: Text("Kontakt & Kollaboratoren"),
+            onTap: () => _showDialog(context, 'Kontakt & Kollaboratoren', 'Diese App wurde von Tobias Brandner, Nhu Lin Lisa Lam und Elvedin Susic entwickelt. \nKontakt: tobias.brandner@stud.plus.ac.at'),
           ),
         ],
       ),

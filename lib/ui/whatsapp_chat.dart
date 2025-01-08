@@ -122,6 +122,7 @@ class _WhatsAppChatState extends State<WhatsAppChat> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.chatName),
+        backgroundColor: Color(int.parse("#FFFFFF".substring(1, 7), radix: 16) + 0xFF000000),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () => Navigator.pop(context),

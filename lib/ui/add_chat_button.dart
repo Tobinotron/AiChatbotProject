@@ -21,6 +21,7 @@ class AddChatButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FloatingActionButton(
       onPressed: onPressed,
+      backgroundColor: Color(int.parse("#25D366".substring(1, 7), radix: 16) + 0xFF000000),
       child: Icon(Icons.add),
     );
   }

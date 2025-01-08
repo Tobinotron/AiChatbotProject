@@ -115,7 +115,7 @@ Future<void> addPersonToDatabase(String person) async {
   Input:
     - none
   Output:
-    - List<Map<String, dynamic>> chatData : with fields 'name' and 'msg_time'
+    - List<Map<String, dynamic>> chatData : with fields 'name' and 'image_path'
 */
 Future<List<Map<String, String?>>> fetchChatsData() async {
   try {

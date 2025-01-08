@@ -77,12 +77,12 @@ String _handleResponse(String responseBody) {
   }
 }
 
-String desc_prompt = "Du bist Gesprächsteilnehmer auf Whatsapp. Bitte schreibe eine kurze Beschreibung, wie man so schreibt wie eine Person die folgende Nachrichten geschrieben hat. Schätze auch ein wer du Familiär bist. \n";
+String descPrompt = "Du bist Gesprächsteilnehmer auf Whatsapp. Ich schicke dir nun eine Liste an Nachrichten von einer Person zu einer anderen Person. Verfasse bitte eine Anleitung in Form von Anweisungen, wie ein Chatbot so wie diese Person schreiben kann (Im Sinne von: Du verwendest oft Wort XY, Du beendest deine Sätze oft ..., etc.) Integriere ebenfalls eine Einschätzung, wie du denkst dass diese Person zu der anderen Steht (Verwandter, Freund, etc.). Verfasse diese Liste als unformatierter Text. Orientiere dich an diesen Nachrichten:\n";
 
 Future<String> generateDescription(String person) async {
   String messages = await db.fetchAllRAGMessages(person);
   String model = "liquid/lfm-40b:free";
-  List<Map<String, String>> msg_to_send = [{"role": "user", "content": desc_prompt + messages}];
+  List<Map<String, String>> msg_to_send = [{"role": "user", "content": descPrompt + messages}];
   
   return await sendToServer(msg_to_send, model);
 }

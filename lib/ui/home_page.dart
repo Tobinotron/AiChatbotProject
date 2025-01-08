@@ -110,6 +110,12 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("replAI"),
+        titleTextStyle: TextStyle(
+          fontSize: 24,
+          fontWeight: FontWeight.bold,
+          color: Color(int.parse("#25D366".substring(1, 7), radix: 16) + 0xFF000000), // Custom color for the title text
+        ),
+        backgroundColor: Color(int.parse("#FFFFFF".substring(1, 7), radix: 16) + 0xFF000000),
         leading: Builder(
           builder: (context) => IconButton(
             icon: Icon(Icons.menu),
@@ -125,7 +131,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      drawer: ChatListDrawer(chatData: chatData),
+      drawer: ChatListDrawer(chatData: chatData, loadChats: _loadChats,),
       endDrawer: SettingsDrawer(),
       body: ListView.builder(
         itemCount: chatData.length,
@@ -171,10 +177,12 @@ class _HomePageState extends State<HomePage> {
 
 class ChatListDrawer extends StatelessWidget {
   final List<Map<String, String?>> chatData;
+  final VoidCallback loadChats;
 
-  ChatListDrawer({required this.chatData});
+  ChatListDrawer({required this.chatData, required this.loadChats});
 
-  void _showDeleteOptions(BuildContext context, String person) {
+  void _showDeleteOptions(BuildContext context, String person,
+  ) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -186,14 +194,14 @@ class ChatListDrawer extends StatelessWidget {
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
-                _confirmDelete(context, person, db.deleteMessageHistory);
+                _confirmDelete(context, person, db.deleteMessageHistory, loadChats);
               },
               child: Text('Chatverlauf löschen'),
             ),
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
-                _confirmDelete(context, person, db.deleteChat);
+                _confirmDelete(context, person, db.deleteChat, loadChats);
               },
               child: Text('Gesamten Chat löschen'),
             ),
@@ -210,7 +218,8 @@ class ChatListDrawer extends StatelessWidget {
   }
 
   void _confirmDelete(BuildContext context, String person,
-      Future<void> Function(String) deleteFunction) {
+      Future<void> Function(String) deleteFunction,
+      VoidCallback loadChats) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -226,10 +235,7 @@ class ChatListDrawer extends StatelessWidget {
               onPressed: () async {
                 Navigator.of(context).pop(); // Close confirmation dialog
                 await deleteFunction(person);
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                      content: Text('Löschvorgang abgeschlossen für $person')),
-                );
+                loadChats();
               },
               child: Text('Löschen'),
             ),
@@ -248,13 +254,13 @@ class ChatListDrawer extends StatelessWidget {
           SizedBox(
             height: 150, // Adjust the height as needed
             child: DrawerHeader(
-              decoration: BoxDecoration(color: Colors.green[700]),
+              decoration: BoxDecoration(color: Color(int.parse("#25D366".substring(1, 7), radix: 16) + 0xFF000000)),
               margin: EdgeInsets.zero,
               padding: EdgeInsets.all(16.0),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  'Chats',
+                  'Chat oder Verlauf löschen',
                   style: TextStyle(
                       color: Colors.white, fontSize: 26), // Adjust font size
                 ),
