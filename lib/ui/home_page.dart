@@ -109,7 +109,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("WhatsApp Chats"),
+        title: Text("replAI"),
         leading: Builder(
           builder: (context) => IconButton(
             icon: Icon(Icons.menu),
