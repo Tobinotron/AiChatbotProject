@@ -1,2 +1,1 @@
-# webcrawler
-[A new Flutter project.](https://www.youtube.com/watch?v=dEI7oX0XxJw)
+An AI powered chatbot developed for the 2024/25 "Software Praktikum" course 
