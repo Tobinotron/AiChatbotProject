@@ -6,31 +6,6 @@ import 'package:webcrawler/apis/gemini_embed.dart' as embedder;
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'prompt_generator.dart' as prompt_gen;
 
-//import 'package:tflite_flutter/tflite_flutter.dart';
-/*
-import 'package:webcrawler/objectbox/objectbox.g.dart'; // This file is generated.
-late final Store store;
-late final Box<ChatMessage> chatBox;
-
-void initializeDatabase() {
-  store = Store(getObjectBoxModel());
-  chatBox = store.box<ChatMessage>();
-}
-
-@Entity()
-class ChatMessage {
-  int id = 0; // ObjectBox requires an ID field; 0 is auto-incremented.
-
-  String sender;
-  String message;
-
-  ChatMessage({
-    required this.sender,
-    required this.message,
-  });
-}
-*/
-
 const dbUrl = 'https://wbaevfuzblqrfkfppibf.supabase.co';
 const String apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndiYWV2ZnV6YmxxcmZrZnBwaWJmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzI5MTc2NDksImV4cCI6MjA0ODQ5MzY0OX0.vQM77au1zrN4WRSGeAxsRu2PZObc0TE7bubdsvZlkHY';
 
@@ -54,7 +29,7 @@ final supabase = Supabase.instance.client;
     - void
 */
 void addRAGToDatabase(String person, String message) async {
-  List<double> embedding = await embedder.generateText(message);
+  List<double> embedding = await embedder.generateEmbedding(message);
 
   try {
     // Insert the data into the 'rag_messages' table
@@ -195,13 +170,13 @@ Future <String> fetchAllRAGMessages(String person) async {
       .select('message')
       .eq('person', person);
     
-    String msg_acc = "";
+    String accumulatedMsg = "";
 
     for (Map<String, dynamic> msg in response) {
-      msg_acc += msg['message'].toString() + ", ";
+      accumulatedMsg += msg['message'].toString() + ", ";
     }
 
-    return msg_acc;
+    return accumulatedMsg;
   }
   catch (e) {
     return "";
@@ -212,7 +187,7 @@ Future<String> fetchClosestRAGMessages(String person, String msg) async {
   try {
     String closestMessages = "";
     
-    List<double> embedding = await embedder.generateText(msg);
+    List<double> embedding = await embedder.generateEmbedding(msg);
 
     // Fetch the data from the rag_messages table
     final response = await supabase

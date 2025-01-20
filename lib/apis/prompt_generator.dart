@@ -24,15 +24,14 @@ Future<String> generateResponse(String resources, String question, String length
   String model = "liquid/lfm-40b:free";
   //String model = "meta-llama/llama-3.1-70b-instruct:free";
 
-  List<Map<String, String>> msg_to_send = messageHistory + [{"role": "user", "content": message}];
-  return await sendToServer(msg_to_send, model);
+  List<Map<String, String>> msgToSend = messageHistory + [{"role": "user", "content": message}];
+  return await sendToServer(msgToSend, model);
 }
 
 // Function to send the message to the server
 Future<String> sendToServer(List<Map<String, String>> message, String model) async {
+  
   // Create the data to send
-
-
   Map<String, dynamic> requestData = {
     "model": model,
     "messages": message
@@ -82,7 +81,7 @@ String descPrompt = "Du bist Gesprächsteilnehmer auf Whatsapp. Ich schicke dir 
 Future<String> generateDescription(String person) async {
   String messages = await db.fetchAllRAGMessages(person);
   String model = "liquid/lfm-40b:free";
-  List<Map<String, String>> msg_to_send = [{"role": "user", "content": descPrompt + messages}];
+  List<Map<String, String>> msgToSend = [{"role": "user", "content": descPrompt + messages}];
   
-  return await sendToServer(msg_to_send, model);
+  return await sendToServer(msgToSend, model);
 }

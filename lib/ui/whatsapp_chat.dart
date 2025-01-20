@@ -1,14 +1,8 @@
 import 'dart:convert';
-import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:flutter/services.dart' show rootBundle;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'settings_drawer.dart';
-import 'package:webcrawler/helpers/list_compare.dart' as list_compare;
 import 'package:webcrawler/apis/prompt_generator.dart' as prompt_gen;
-import 'package:webcrawler/helpers/database.dart' as database;
 import 'package:webcrawler/apis/msg_database.dart' as db;
 
 class WhatsAppChat extends StatefulWidget {
@@ -59,11 +53,6 @@ class _WhatsAppChatState extends State<WhatsAppChat> {
     }
   }
 
-  // Get the directory to store the JSON files
-  Future<Directory> _getAppDocumentsDirectory() async {
-    return await getApplicationDocumentsDirectory();
-  }
-
   void _loadChatMessages() async {
     try {
       final fetchedMessages = await db.fetchMessageHistory(widget.chatName);
@@ -73,48 +62,6 @@ class _WhatsAppChatState extends State<WhatsAppChat> {
     } catch (e) {
       print('Error loading messages: $e');
     }
-  }
-
-  // Method to load JSON data
-  Future<void> initializeDatabase() async {
-    try {
-      String jsonString = await rootBundle.loadString('assets/articles.json');
-      var jsonData = json.decode(jsonString);
-      if (jsonData is List) {
-        database.processedArticles = jsonData.map((item) {
-          if (item is Map<String, dynamic>) {
-            return item;
-          } else {
-            throw Exception('Item is not a Map<String, dynamic>');
-          }
-        }).toList();
-      } else {
-        throw Exception('Decoded JSON is not a List');
-      }
-      print("Loaded JSON: $jsonString");
-    } catch (e) {
-      print("Error loading JSON: ${e.toString()}");
-    }
-  }
-
-  // Method to initialize stopwords from a JSON file
-  Future<void> initializeStopwords() async {
-    try {
-      String jsonString = await rootBundle.loadString('assets/stopwords-de.json');
-      var jsonData = json.decode(jsonString);
-      if (jsonData is List) {
-        database.stopwords = jsonData.cast<String>();
-      } else {
-        throw Exception('Decoded JSON is not a List of strings');
-      }
-      print("Loaded Stopwords: $jsonString");
-    } catch (e) {
-      print("Error loading stopwords: ${e.toString()}");
-    }
-  }
-
-  Future<String> getHighestMatchingArticlesAsString(String message) async {
-    return await list_compare.getHighestMatchingArticlesAsString(message);
   }
 
   @override
