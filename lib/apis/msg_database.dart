@@ -5,15 +5,16 @@ import 'package:flutter/widgets.dart';
 import 'package:webcrawler/apis/gemini_embed.dart' as embedder;
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'prompt_generator.dart' as prompt_gen;
+import 'package:webcrawler/apis/keys/keys.dart' show supabaseKey;
+
 
 const dbUrl = 'https://wbaevfuzblqrfkfppibf.supabase.co';
-const String apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndiYWV2ZnV6YmxxcmZrZnBwaWJmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzI5MTc2NDksImV4cCI6MjA0ODQ5MzY0OX0.vQM77au1zrN4WRSGeAxsRu2PZObc0TE7bubdsvZlkHY';
 
 Future<void> initDb() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Supabase.initialize(
       url: dbUrl,
-      anonKey: apiKey,
+      anonKey: supabaseKey,
     );
 }
 

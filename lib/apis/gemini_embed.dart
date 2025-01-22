@@ -1,12 +1,10 @@
 import 'package:google_generative_ai/google_generative_ai.dart';
-
-const String apiKey = 'AIzaSyCw8VrEb65qZuB9hdsyTJVR9amLYhBsHAI';
+import 'package:webcrawler/apis/keys/keys.dart' show geminiKey;
 
 // The model that will do the embedding
 final model = GenerativeModel(
   model: 'embedding-001',
-  apiKey: apiKey);
-
+  apiKey: geminiKey);
 
 Future<List<double>> generateEmbedding(String prompt) async {
   final content = Content.text(prompt);

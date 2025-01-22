@@ -1,9 +1,8 @@
 import 'dart:convert'; // For JSON encoding and decoding
 import 'package:http/http.dart' as http; // For making HTTP requests
 import 'msg_database.dart' as db;
+import 'package:webcrawler/apis/keys/keys.dart' show openrouterKey;
 
-// Set your API key here
-const String apiKey = "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";
 
 // The URL for the API endpoint
 const String url = "https://openrouter.ai/api/v1/chat/completions";
@@ -42,7 +41,7 @@ Future<String> sendToServer(List<Map<String, String>> message, String model) asy
 
   // Set the headers, including authorization with your API key
   Map<String, String> headers = {
-    "Authorization": "Bearer $apiKey",
+    "Authorization": "Bearer $openrouterKey",
     "Content-Type": "application/json"
   };
 

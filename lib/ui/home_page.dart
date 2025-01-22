@@ -36,15 +36,6 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  void _addNewChat() {
-    setState(() {
-      chatData.add({
-        "name": "New Chat ${chatData.length + 1}",
-        "imagePath": null,
-      });
-    });
-  }
-
   // importChatFile() muss im _HomePageState sein
   Future<void> importChatFile() async {
     // Step 1: Pick a file

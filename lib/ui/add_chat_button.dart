@@ -1,17 +1,5 @@
 import 'package:flutter/material.dart';
 
-// Funktionalität in home_page.dart
-
-// UPDATE Emulator funkt, fehlt nur die convertChat Funktion, um überhaupt zu überprüfen,
-// ob das File richtig benutzt wird.
-
-// Falls der nicht funktioniert, in
-// android\app\src\main\AndroidManifest.xml die Zeilen
-// <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-// <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-// entfernen.
-// Evt. in android\app\build.gradle die ndkVersion = "25.1.8937393" wieder auf "flutter.ndkVersion" setzen
-
 class AddChatButton extends StatelessWidget {
   final VoidCallback onPressed;
 
