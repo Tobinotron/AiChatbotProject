@@ -10,10 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   http: ^1.1.0
-  html: ^0.15.0
-  text_analysis: ^1.0.0+2
   shared_preferences: ^2.0.15
-  path_provider: ^2.0.9
   file_picker: ^5.0.0
   supabase_flutter: ^2.8.1
   google_generative_ai: ^0.4.6

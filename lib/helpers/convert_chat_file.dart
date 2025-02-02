@@ -2,12 +2,13 @@ import 'package:webcrawler/apis/msg_database.dart' as db;
 import 'dart:io';
 
 /*
-  Verarbeitet das chatFile und gibt die Namen aller Chat Teilnehmer zurück.
-  Input:
-    - String chatFilePath : Pfad zur Chat-Datei im selben Format wie /assets/TestWhatsappChat.txt
-  Output:
-    - List<String>? names : Namen aller Chat-Teilnehmer, kann null sein falls das File ein falsches Format hat.
+  Processes the chat file and returns the names of all chat participants.  
+  Input:  
+    - String chatFilePath: Path to the chat file in the same format as /assets/TestWhatsappChat.txt  
+  Returns:  
+    - List<String>? names: Names of all chat participants; can be null if the file has an incorrect format.  
 */
+
 List<String>? getChatMembers(String chatFilePath) {
   try {
     final chatFile = File(chatFilePath);
@@ -38,13 +39,14 @@ List<String>? getChatMembers(String chatFilePath) {
 }
 
 /*
-  Geht das chatFile durch und ruft 'db.addRAGToDatabase(name, message)' für alle Nachrichten der gegebenen Person auf
-  Input:
-    - String chatFilePath : Pfad zur Chat-Datei im selben Format wie /assets/TestWhatsappChat.txt
-    - String name : Name der Person deren Nachrichten gespeichert werden sollen
-  Output:
-    - void
+  Iterates through the chat file and calls adds all messages of the given person to the Database.  
+  Input:  
+    - String chatFilePath: Path to the chat file in the same format as /assets/TestWhatsappChat.txt  
+    - String name: Name of the person whose messages should be saved  
+  Returns:  
+    - void  
 */
+
 void readMessagesIntoDatabase(String chatFilePath, String name) {
   try {
     final chatFile = File(chatFilePath);

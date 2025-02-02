@@ -26,7 +26,7 @@ final supabase = Supabase.instance.client;
   Input:
     - String person  : The name of the person that sent the message
     - String message : The contens of the message as a String. This message will be embedded and also become a field in the Dataset.
-  Output:
+  Returns:
     - void
 */
 void addRAGToDatabase(String person, String message) async {
@@ -54,8 +54,8 @@ void addRAGToDatabase(String person, String message) async {
     - String person  : The name of the person chatted with
     - String sender  : The sender of the message, either 'user' or 'bot'
     - String message : The contens of the message as a String
-  Output:
-    - void
+  Returns:
+    - Future<void>
 */
 Future<void> addMessageToDatabase(String person, String sender, String message) async {
   try {
@@ -74,6 +74,13 @@ Future<void> addMessageToDatabase(String person, String sender, String message) 
   }
 }
 
+/*
+  Adds a person to the supabase Database.
+  Input:
+    - String person  : The name of the person chatted with
+  Returns:
+    - Future<void>
+*/
 Future<void> addPersonToDatabase(String person) async {
   String description = await prompt_gen.generateDescription(person);
 
@@ -90,7 +97,7 @@ Future<void> addPersonToDatabase(String person) async {
   Fetches the names of all chat members and returns them as a List
   Input:
     - none
-  Output:
+  Returns:
     - List<Map<String, dynamic>> chatData : with fields 'name' and 'image_path'
 */
 Future<List<Map<String, String?>>> fetchChatsData() async {
@@ -114,6 +121,13 @@ Future<List<Map<String, String?>>> fetchChatsData() async {
   }
 }
 
+/*
+  Fetches the description of a specific person
+  Input:
+    - String person  : The name of the person
+  Returns:
+    - Future<String> description : The description of the person
+*/
 Future<String> fetchPersonDescription(String person) async {
   try {
     final response = await supabase
@@ -136,7 +150,7 @@ Future<String> fetchPersonDescription(String person) async {
   Fetches all chat messages belonging to a single Person and returns them as a List
   Input:
     - String person : name of the person whose chat data should be fetched
-  Output:
+  Returns:
     - List<Map<String, String>> chatHistory : with fields 'sender' and 'message'. No null values allowed.
 */
 Future<List<Map<String, String>>> fetchMessageHistory(String person) async {
@@ -164,7 +178,14 @@ Future<List<Map<String, String>>> fetchMessageHistory(String person) async {
   }
 }
 
-Future <String> fetchAllRAGMessages(String person) async {
+/*
+  Fetches all RAG messages belonging to a single Person and returns them as a String
+  Input:
+    - String person : name of the person whose RAG messages should be fetched
+  Returns:
+    - Future<String> RAGMessages : String representation of all messages
+*/
+Future<String> fetchAllRAGMessages(String person) async {
   try {
     final response = await supabase
       .from('rag_messages')
@@ -184,6 +205,14 @@ Future <String> fetchAllRAGMessages(String person) async {
   }
 }
 
+/*
+  Fetches the closest RAG messages to a specific person and input
+  Input:
+    - String person : Name of the person whose RAG messages should be fetched
+    - String msg    : The message that returned messages should be close to
+  Returns:
+    - Future<String> RAGMessages : String representation of all messages
+*/
 Future<String> fetchClosestRAGMessages(String person, String msg) async {
   try {
     String closestMessages = "";
@@ -214,6 +243,7 @@ Future<String> fetchClosestRAGMessages(String person, String msg) async {
     }
 
     // Sort the messages by similarity in descending order
+    
     messagesWithSimilarity.sort((a, b) => b['similarity'].compareTo(a['similarity']));
 
     // Append the top 5 messages to the result string
@@ -231,7 +261,16 @@ Future<String> fetchClosestRAGMessages(String person, String msg) async {
   }
 }
 
-// Function to calculate the cosine similarity between two vectors
+
+/*
+  Function to calculate the cosine similarity between two vectors
+  Input:
+    - List<double> vector1 : Vector that should be compared
+    - List<double> vector2 : Vector that should be compared
+  Returns:
+    - double cosineSimilarity : The calculated cosine similarity 
+                                of the two input-vectors
+*/
 double cosineSimilarity(List<double> vector1, List<double> vector2) {
   double dotProduct = 0.0;
   double norm1 = 0.0;
@@ -253,7 +292,7 @@ double cosineSimilarity(List<double> vector1, List<double> vector2) {
   Deletes the chat_history of a specific person
   Input:
     - String person : name of the person whose chatHistory should be deleted
-  Output:
+  Returns:
     - void
 */
 Future<void> deleteMessageHistory(String person) async {
@@ -273,7 +312,7 @@ Future<void> deleteMessageHistory(String person) async {
   Deletes the entire Chat with a specific person, meaning all entries in chats, chat_history and rag_messages in the Database
   Input:
     - String person : name of the person whose Data should be deleted
-  Output:
+  Returns:
     - void
 */
 Future<void> deleteChat(String person) async {

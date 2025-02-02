@@ -81,14 +81,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.6"
-  csslib:
-    dependency: transitive
-    description:
-      name: csslib
-      sha256: "09bad715f418841f976c77db72d5398dc1253c21fb9c0c7f0b0b985860b2d58e"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.2"
   fake_async:
     dependency: transitive
     description:
@@ -184,14 +176,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.0"
-  html:
-    dependency: "direct main"
-    description:
-      name: html
-      sha256: "1fc58edeaec4307368c60d59b7e15b9d658b57d7f3125098b6294153c75337ec"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.15.5"
   http:
     dependency: "direct main"
     description:
@@ -297,7 +281,7 @@ packages:
     source: hosted
     version: "1.9.0"
   path_provider:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: path_provider
       sha256: "50c5dd5b6e1aaf6fb3a78b33f6aa3afca52bf903a8a5298f53101fdaee55bbcd"
@@ -360,14 +344,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.8"
-  porter_2_stemmer:
-    dependency: transitive
-    description:
-      name: porter_2_stemmer
-      sha256: "40374d14165022a700797689eb159bd7baed701fc7c8ca9f39dd0945366b2ed3"
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.0.2"
   postgrest:
     dependency: transitive
     description:
@@ -533,14 +509,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.7.2"
-  text_analysis:
-    dependency: "direct main"
-    description:
-      name: text_analysis
-      sha256: "61c8e8d2b25e651f53f77b0c28a7c91b5058c2cf2ee5617e793490705f12cea0"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.0+2"
   typed_data:
     dependency: transitive
     description:
