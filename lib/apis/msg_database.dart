@@ -261,33 +261,6 @@ Future<String> fetchClosestRAGMessages(String person, String msg) async {
   }
 }
 
-
-/*
-  Function to calculate the cosine similarity between two vectors
-  Input:
-    - List<double> vector1 : Vector that should be compared
-    - List<double> vector2 : Vector that should be compared
-  Returns:
-    - double cosineSimilarity : The calculated cosine similarity 
-                                of the two input-vectors
-*/
-double cosineSimilarity(List<double> vector1, List<double> vector2) {
-  double dotProduct = 0.0;
-  double norm1 = 0.0;
-  double norm2 = 0.0;
-
-  for (int i = 0; i < vector1.length; i++) {
-    dotProduct += vector1[i] * vector2[i];
-    norm1 += vector1[i] * vector1[i];
-    norm2 += vector2[i] * vector2[i];
-  }
-
-  norm1 = sqrt(norm1);
-  norm2 = sqrt(norm2);
-
-  return dotProduct / (norm1 * norm2);
-}
-
 /*
   Deletes the chat_history of a specific person
   Input:
@@ -336,4 +309,30 @@ Future<void> deleteChat(String person) async {
   } catch (e) {
     print('Error deleting chat data for $person: $e');
   }
+}
+
+/*
+  Function to calculate the cosine similarity between two vectors
+  Input:
+    - List<double> vector1 : Vector that should be compared
+    - List<double> vector2 : Vector that should be compared
+  Returns:
+    - double cosineSimilarity : The calculated cosine similarity 
+                                of the two input-vectors
+*/
+double cosineSimilarity(List<double> vector1, List<double> vector2) {
+  double dotProduct = 0.0;
+  double norm1 = 0.0;
+  double norm2 = 0.0;
+
+  for (int i = 0; i < vector1.length; i++) {
+    dotProduct += vector1[i] * vector2[i];
+    norm1 += vector1[i] * vector1[i];
+    norm2 += vector2[i] * vector2[i];
+  }
+
+  norm1 = sqrt(norm1);
+  norm2 = sqrt(norm2);
+
+  return dotProduct / (norm1 * norm2);
 }

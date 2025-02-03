@@ -39,7 +39,6 @@ const String model = "liquid/lfm-40b:free";
 Future<String> generateResponse(String resources, String question, String length, List<Map<String, String>> messageHistory, String description) async {
 
   String message = prePrompt + resources + middlePrompt + question + finalPrompt + description + lengthPrompt + length;
-  //String model = "meta-llama/llama-3.1-70b-instruct:free";
 
   List<Map<String, String>> msgToSend = messageHistory + [{"role": "user", "content": message}];
   return await sendToServer(msgToSend, model);
